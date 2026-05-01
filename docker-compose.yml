@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+
+  backend:
+    build: ./backend
+    ports:
+      - "8005:8005"
+    depends_on:
+      - triton
+      - redis
+      - ollama
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - TRITON_URL=http://triton:8000/v2/models/plant_model/infer
+      - OLLAMA_URL=http://ollama:11434/api/generate
+
+  triton:
+    image: nvcr.io/nvidia/tritonserver:23.10-py3
+    runtime: nvidia
+    command: tritonserver --model-repository=/models
+    volumes:
+      - ./model_repository:/models   # ✅ FIXED HERE
+    ports:
+      - "8000:8000"
+
+  ollama:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: always
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:8005
+
+volumes:
+  ollama_data:

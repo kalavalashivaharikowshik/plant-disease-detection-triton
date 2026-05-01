@@ -1,0 +1,665 @@
+{
+  "model": {
+    "name": "Plant Disease Detection Model",
+    "version": "3.0.0",
+    "description": "EfficientNet-based plant disease detection using Triton",
+    "framework": "onnx-triton",
+    "input_shape": [224, 224, 3],
+    "supported_formats": ["jpeg", "jpg", "png", "webp"]
+  },
+
+  "confidence_thresholds": {
+    "high_confidence": 0.9,
+    "medium_confidence": 0.7,
+    "low_confidence": 0.5,
+    "uncertain": 0.0
+  },
+
+  "classes": [
+    {
+      "id": "Apple___Apple_scab",
+      "name": "Apple scab",
+      "plant": "Apple",
+      "disease": "Apple scab",
+      "severity": "moderate",
+      "symptoms": ["Olive-green spots on leaves", "Dark lesions on fruit"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Reduces fruit quality",
+      "treatment": {
+        "chemical": "Apply fungicides like captan",
+        "cultural": "Remove infected leaves",
+        "preventive": "Use resistant varieties"
+      }
+    },
+
+    {
+      "id": "Apple___Black_rot",
+      "name": "Black rot",
+      "plant": "Apple",
+      "disease": "Black rot",
+      "severity": "high",
+      "symptoms": ["Dark lesions", "Fruit rot"],
+      "causes": "Fungal pathogen",
+      "urgency": "high",
+      "economic_impact": "Severe crop loss",
+      "treatment": {
+        "chemical": "Use fungicides",
+        "cultural": "Prune infected branches",
+        "preventive": "Maintain orchard hygiene"
+      }
+    },
+
+    {
+      "id": "Apple___Cedar_apple_rust",
+      "name": "Cedar apple rust",
+      "plant": "Apple",
+      "disease": "Rust",
+      "severity": "moderate",
+      "symptoms": ["Yellow spots", "Rust-colored lesions"],
+      "causes": "Fungal spores",
+      "urgency": "medium",
+      "economic_impact": "Moderate yield loss",
+      "treatment": {
+        "chemical": "Apply fungicides",
+        "cultural": "Remove nearby host plants",
+        "preventive": "Resistant varieties"
+      }
+    },
+
+    {
+      "id": "Apple___healthy",
+      "name": "Healthy",
+      "plant": "Apple",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No visible symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Maintain care",
+        "preventive": "Routine monitoring"
+      }
+    },
+
+    {
+      "id": "Blueberry___healthy",
+      "name": "Healthy",
+      "plant": "Blueberry",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No visible symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Proper irrigation",
+        "preventive": "Routine monitoring"
+      }
+    },
+
+    {
+      "id": "Cherry_(including_sour)___Powdery_mildew",
+      "name": "Powdery mildew",
+      "plant": "Cherry",
+      "disease": "Powdery mildew",
+      "severity": "moderate",
+      "symptoms": ["White powdery coating"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Reduced fruit yield",
+      "treatment": {
+        "chemical": "Use sulfur fungicide",
+        "cultural": "Improve air circulation",
+        "preventive": "Avoid humidity"
+      }
+    },
+
+    {
+      "id": "Cherry_(including_sour)___healthy",
+      "name": "Healthy",
+      "plant": "Cherry",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No visible symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Proper care",
+        "preventive": "Monitoring"
+      }
+    },
+
+    {
+      "id": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "name": "Gray leaf spot",
+      "plant": "Corn",
+      "disease": "Leaf spot",
+      "severity": "moderate",
+      "symptoms": ["Gray lesions on leaves"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Yield reduction",
+      "treatment": {
+        "chemical": "Apply fungicides",
+        "cultural": "Crop rotation",
+        "preventive": "Resistant hybrids"
+      }
+    },
+
+    {
+      "id": "Corn_(maize)___Common_rust_",
+      "name": "Common rust",
+      "plant": "Corn",
+      "disease": "Rust",
+      "severity": "moderate",
+      "symptoms": ["Orange pustules"],
+      "causes": "Fungal spores",
+      "urgency": "medium",
+      "economic_impact": "Moderate loss",
+      "treatment": {
+        "chemical": "Fungicide spray",
+        "cultural": "Remove infected plants",
+        "preventive": "Resistant seeds"
+      }
+    },
+
+    {
+      "id": "Corn_(maize)___Northern_Leaf_Blight",
+      "name": "Northern leaf blight",
+      "plant": "Corn",
+      "disease": "Blight",
+      "severity": "high",
+      "symptoms": ["Long gray lesions"],
+      "causes": "Fungal infection",
+      "urgency": "high",
+      "economic_impact": "High yield loss",
+      "treatment": {
+        "chemical": "Apply fungicide",
+        "cultural": "Crop rotation",
+        "preventive": "Resistant hybrids"
+      }
+    },
+
+    {
+      "id": "Corn_(maize)___healthy",
+      "name": "Healthy",
+      "plant": "Corn",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No visible symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Maintain soil",
+        "preventive": "Monitoring"
+      }
+    },
+
+    {
+      "id": "Grape___Black_rot",
+      "name": "Black rot",
+      "plant": "Grape",
+      "disease": "Black rot",
+      "severity": "high",
+      "symptoms": ["Black spots", "Shriveled fruit"],
+      "causes": "Fungal infection",
+      "urgency": "high",
+      "economic_impact": "Severe loss",
+      "treatment": {
+        "chemical": "Apply fungicide",
+        "cultural": "Prune vines",
+        "preventive": "Air circulation"
+      }
+    },
+
+    {
+      "id": "Grape___Esca_(Black_Measles)",
+      "name": "Esca",
+      "plant": "Grape",
+      "disease": "Esca",
+      "severity": "high",
+      "symptoms": ["Leaf streaking", "Fruit spotting"],
+      "causes": "Fungal disease",
+      "urgency": "high",
+      "economic_impact": "Major vineyard loss",
+      "treatment": {
+        "chemical": "Limited chemical control",
+        "cultural": "Remove infected vines",
+        "preventive": "Healthy planting"
+      }
+    },
+
+    {
+      "id": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "name": "Leaf blight",
+      "plant": "Grape",
+      "disease": "Leaf spot",
+      "severity": "moderate",
+      "symptoms": ["Brown spots"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Reduced yield",
+      "treatment": {
+        "chemical": "Fungicide spray",
+        "cultural": "Remove leaves",
+        "preventive": "Avoid moisture"
+      }
+    },
+
+    {
+      "id": "Grape___healthy",
+      "name": "Healthy",
+      "plant": "Grape",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Maintain vines",
+        "preventive": "Monitoring"
+      }
+    },
+
+    {
+      "id": "Orange___Haunglongbing_(Citrus_greening)",
+      "name": "Citrus greening",
+      "plant": "Orange",
+      "disease": "HLB",
+      "severity": "high",
+      "symptoms": ["Yellow shoots", "Misshapen fruit"],
+      "causes": "Bacterial infection",
+      "urgency": "high",
+      "economic_impact": "Severe loss",
+      "treatment": {
+        "chemical": "Control psyllids",
+        "cultural": "Remove infected trees",
+        "preventive": "Use clean stock"
+      }
+    },
+
+    {
+      "id": "Peach___Bacterial_spot",
+      "name": "Bacterial spot",
+      "plant": "Peach",
+      "disease": "Bacterial spot",
+      "severity": "moderate",
+      "symptoms": ["Leaf spots", "Fruit lesions"],
+      "causes": "Bacterial infection",
+      "urgency": "medium",
+      "economic_impact": "Reduced fruit quality",
+      "treatment": {
+        "chemical": "Copper spray",
+        "cultural": "Remove infected parts",
+        "preventive": "Resistant varieties"
+      }
+    },
+
+    {
+      "id": "Peach___healthy",
+      "name": "Healthy",
+      "plant": "Peach",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Maintain care",
+        "preventive": "Monitoring"
+      }
+    },
+
+    {
+      "id": "Pepper,_bell___Bacterial_spot",
+      "name": "Bacterial spot",
+      "plant": "Pepper",
+      "disease": "Bacterial spot",
+      "severity": "moderate",
+      "symptoms": ["Water-soaked lesions"],
+      "causes": "Bacterial infection",
+      "urgency": "medium",
+      "economic_impact": "Moderate loss",
+      "treatment": {
+        "chemical": "Copper sprays",
+        "cultural": "Remove infected leaves",
+        "preventive": "Avoid wet leaves"
+      }
+    },
+
+    {
+      "id": "Pepper,_bell___healthy",
+      "name": "Healthy",
+      "plant": "Pepper",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Proper care",
+        "preventive": "Monitoring"
+      }
+    },
+
+    {
+      "id": "Potato___Early_blight",
+      "name": "Early blight",
+      "plant": "Potato",
+      "disease": "Early blight",
+      "severity": "moderate",
+      "symptoms": ["Concentric rings"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Yield reduction",
+      "treatment": {
+        "chemical": "Fungicide",
+        "cultural": "Crop rotation",
+        "preventive": "Healthy seeds"
+      }
+    },
+
+    {
+      "id": "Potato___Late_blight",
+      "name": "Late blight",
+      "plant": "Potato",
+      "disease": "Late blight",
+      "severity": "high",
+      "symptoms": ["Brown lesions", "White mold"],
+      "causes": "Phytophthora infestans",
+      "urgency": "high",
+      "economic_impact": "Severe loss",
+      "treatment": {
+        "chemical": "Chlorothalonil",
+        "cultural": "Remove infected plants",
+        "preventive": "Avoid moisture"
+      }
+    },
+
+    {
+      "id": "Potato___healthy",
+      "name": "Healthy",
+      "plant": "Potato",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Soil care",
+        "preventive": "Monitoring"
+      }
+    },
+
+    {
+      "id": "Raspberry___healthy",
+      "name": "Healthy",
+      "plant": "Raspberry",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Proper care",
+        "preventive": "Monitoring"
+      }
+    },
+
+    {
+      "id": "Soybean___healthy",
+      "name": "Healthy",
+      "plant": "Soybean",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Maintain soil",
+        "preventive": "Monitoring"
+      }
+    },
+
+    {
+      "id": "Squash___Powdery_mildew",
+      "name": "Powdery mildew",
+      "plant": "Squash",
+      "disease": "Powdery mildew",
+      "severity": "moderate",
+      "symptoms": ["White powder coating"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Reduced yield",
+      "treatment": {
+        "chemical": "Sulfur spray",
+        "cultural": "Improve airflow",
+        "preventive": "Avoid humidity"
+      }
+    },
+
+    {
+      "id": "Strawberry___Leaf_scorch",
+      "name": "Leaf scorch",
+      "plant": "Strawberry",
+      "disease": "Leaf scorch",
+      "severity": "moderate",
+      "symptoms": ["Brown edges"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Reduced fruit quality",
+      "treatment": {
+        "chemical": "Fungicide",
+        "cultural": "Remove infected leaves",
+        "preventive": "Proper spacing"
+      }
+    },
+
+    {
+      "id": "Strawberry___healthy",
+      "name": "Healthy",
+      "plant": "Strawberry",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Care",
+        "preventive": "Monitoring"
+      }
+    },
+
+    {
+      "id": "Tomato___Bacterial_spot",
+      "name": "Bacterial spot",
+      "plant": "Tomato",
+      "disease": "Bacterial spot",
+      "severity": "moderate",
+      "symptoms": ["Leaf lesions"],
+      "causes": "Bacterial infection",
+      "urgency": "medium",
+      "economic_impact": "Yield reduction",
+      "treatment": {
+        "chemical": "Copper spray",
+        "cultural": "Remove infected leaves",
+        "preventive": "Avoid wet foliage"
+      }
+    },
+
+    {
+      "id": "Tomato___Early_blight",
+      "name": "Early blight",
+      "plant": "Tomato",
+      "disease": "Early blight",
+      "severity": "moderate",
+      "symptoms": ["Concentric rings"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Reduced yield",
+      "treatment": {
+        "chemical": "Fungicide",
+        "cultural": "Crop rotation",
+        "preventive": "Spacing"
+      }
+    },
+
+    {
+      "id": "Tomato___Late_blight",
+      "name": "Late blight",
+      "plant": "Tomato",
+      "disease": "Late blight",
+      "severity": "high",
+      "symptoms": ["Dark spots", "Mold"],
+      "causes": "Fungal infection",
+      "urgency": "high",
+      "economic_impact": "Severe loss",
+      "treatment": {
+        "chemical": "Fungicide",
+        "cultural": "Destroy plants",
+        "preventive": "Avoid humidity"
+      }
+    },
+
+    {
+      "id": "Tomato___Leaf_Mold",
+      "name": "Leaf mold",
+      "plant": "Tomato",
+      "disease": "Leaf mold",
+      "severity": "moderate",
+      "symptoms": ["Yellow patches"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Reduced yield",
+      "treatment": {
+        "chemical": "Fungicide",
+        "cultural": "Ventilation",
+        "preventive": "Avoid humidity"
+      }
+    },
+
+    {
+      "id": "Tomato___Septoria_leaf_spot",
+      "name": "Septoria leaf spot",
+      "plant": "Tomato",
+      "disease": "Leaf spot",
+      "severity": "moderate",
+      "symptoms": ["Small spots"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Yield reduction",
+      "treatment": {
+        "chemical": "Fungicide",
+        "cultural": "Remove leaves",
+        "preventive": "Avoid splashing"
+      }
+    },
+
+    {
+      "id": "Tomato___Spider_mites Two-spotted_spider_mite",
+      "name": "Spider mites",
+      "plant": "Tomato",
+      "disease": "Pest",
+      "severity": "moderate",
+      "symptoms": ["Yellow specks"],
+      "causes": "Insect infestation",
+      "urgency": "medium",
+      "economic_impact": "Reduced growth",
+      "treatment": {
+        "chemical": "Miticide",
+        "cultural": "Wash leaves",
+        "preventive": "Humidity control"
+      }
+    },
+
+    {
+      "id": "Tomato___Target_Spot",
+      "name": "Target spot",
+      "plant": "Tomato",
+      "disease": "Target spot",
+      "severity": "moderate",
+      "symptoms": ["Circular lesions"],
+      "causes": "Fungal infection",
+      "urgency": "medium",
+      "economic_impact": "Yield loss",
+      "treatment": {
+        "chemical": "Fungicide",
+        "cultural": "Remove leaves",
+        "preventive": "Avoid wet foliage"
+      }
+    },
+
+    {
+      "id": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "name": "Yellow leaf curl virus",
+      "plant": "Tomato",
+      "disease": "Virus",
+      "severity": "high",
+      "symptoms": ["Leaf curling", "Yellowing"],
+      "causes": "Viral infection",
+      "urgency": "high",
+      "economic_impact": "Severe loss",
+      "treatment": {
+        "chemical": "Control whiteflies",
+        "cultural": "Remove plants",
+        "preventive": "Resistant varieties"
+      }
+    },
+
+    {
+      "id": "Tomato___Tomato_mosaic_virus",
+      "name": "Mosaic virus",
+      "plant": "Tomato",
+      "disease": "Virus",
+      "severity": "high",
+      "symptoms": ["Mosaic pattern"],
+      "causes": "Viral infection",
+      "urgency": "high",
+      "economic_impact": "Severe loss",
+      "treatment": {
+        "chemical": "No cure",
+        "cultural": "Remove infected plants",
+        "preventive": "Sanitize tools"
+      }
+    },
+
+    {
+      "id": "Tomato___healthy",
+      "name": "Healthy",
+      "plant": "Tomato",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": ["No symptoms"],
+      "causes": "No disease",
+      "urgency": "low",
+      "economic_impact": "No impact",
+      "treatment": {
+        "chemical": "Not required",
+        "cultural": "Maintain care",
+        "preventive": "Monitoring"
+      }
+    }
+  ]
+}

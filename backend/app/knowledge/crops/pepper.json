@@ -1,0 +1,124 @@
+[
+  {
+    "id": "Pepper,_bell___Bacterial_spot",
+    "plant": "Pepper",
+    "disease": "Bacterial spot",
+    "display_name": "Bell pepper bacterial spot",
+    "healthy": false,
+    "pathogen": "Xanthomonas euvesicatoria and related Xanthomonas species",
+    "pathogen_type": "bacterium",
+    "risk": "moderate",
+    "summary": "A bacterial disease that causes leaf spots and leaf drop. Fruit may get scabby spots and sunscald when leaves fall.",
+    "symptoms": [
+      "Small, water-soaked spots that become brown with tan or grey centres",
+      "Raised, pimple-like spots on the leaf underside",
+      "Yellowing and heavy leaf drop",
+      "Raised, scabby spots on green fruit"
+    ],
+    "key_sign": "Small greasy or water-soaked spots, often raised underneath, with yellowing leaves.",
+    "favourable_conditions": "Warm, humid weather with rain, wind or overhead irrigation.",
+    "spread": "Spread on infected seed and transplants, by splashing water, and on hands and tools.",
+    "action_plan": {
+      "today": [
+        "Remove badly spotted leaves and do not work among wet plants"
+      ],
+      "this_week": [
+        "Apply copper combined with mancozeb, as registered, before rainy periods",
+        "Switch to drip irrigation if possible"
+      ],
+      "next_two_weeks": [
+        "Repeat at label intervals while the weather stays wet",
+        "Remove volunteer peppers and tomato plants nearby"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Fixed copper plus mancozeb tank mixes; acibenzolar-S-methyl (a plant defence activator) where registered. Copper-resistant strains exist"
+      ],
+      "organic": [
+        "OMRI-listed copper products"
+      ],
+      "cultural": [
+        "Rotate away from peppers and tomatoes for 2-3 years",
+        "Sanitise tools; avoid handling wet plants"
+      ]
+    },
+    "prevention": [
+      "Plant resistant varieties, the most cost-effective control",
+      "Use certified disease-free seed and transplants"
+    ],
+    "look_alikes": [],
+    "questions": [
+      "greasy_spots_halo",
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "UC IPM: Pepper bacterial spot",
+        "url": "https://ipm.ucanr.edu/PMG/r604100311.html"
+      },
+      {
+        "title": "Clemson Extension: Controlling bacterial spot on tomato and pepper",
+        "url": "https://lgpress.clemson.edu/publication/controlling-bacterial-spot-on-tomato-and-pepper/"
+      },
+      {
+        "title": "University of Maryland Extension: Bacterial leaf spot of peppers",
+        "url": "https://extension.umd.edu/resource/bacterial-leaf-spot-peppers/"
+      }
+    ]
+  },
+  {
+    "id": "Pepper,_bell___healthy",
+    "plant": "Pepper",
+    "disease": "Healthy",
+    "display_name": "Healthy pepper leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this pepper leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Use drip irrigation"
+      ]
+    },
+    "prevention": [
+      "Use drip irrigation",
+      "Rotate crops yearly",
+      "Use certified seed and transplants"
+    ],
+    "look_alikes": [
+      "Pepper,_bell___Bacterial_spot"
+    ],
+    "questions": [
+      "any_symptoms",
+      "greasy_spots_halo"
+    ],
+    "sources": [
+      {
+        "title": "University of Maryland Extension: Bacterial leaf spot of peppers",
+        "url": "https://extension.umd.edu/resource/bacterial-leaf-spot-peppers/"
+      }
+    ]
+  }
+]

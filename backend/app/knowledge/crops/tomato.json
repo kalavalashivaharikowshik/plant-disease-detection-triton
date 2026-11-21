@@ -1,0 +1,674 @@
+[
+  {
+    "id": "Tomato___Bacterial_spot",
+    "plant": "Tomato",
+    "disease": "Bacterial spot",
+    "display_name": "Tomato bacterial spot",
+    "healthy": false,
+    "pathogen": "Xanthomonas perforans and related Xanthomonas species",
+    "pathogen_type": "bacterium",
+    "risk": "moderate",
+    "summary": "A bacterial disease that spots leaves, stems and green fruit. Infected leaves stay on the plant and turn yellow and ragged.",
+    "symptoms": [
+      "Small (under 3 mm) dark, greasy or water-soaked spots, sometimes with a yellow halo",
+      "Spot centres may fall out, making leaves ragged",
+      "Raised, scabby spots on green fruit"
+    ],
+    "key_sign": "Small dark greasy spots with yellowing; no rings and no grey centres.",
+    "favourable_conditions": "Warm, wet weather with wind-driven rain or overhead irrigation.",
+    "spread": "Carried on seed and transplants; spreads by splashing water, hands and tools.",
+    "action_plan": {
+      "today": [
+        "Remove badly spotted leaves; avoid working among wet plants"
+      ],
+      "this_week": [
+        "Apply copper plus mancozeb, as registered, before rain",
+        "Switch to drip irrigation or water at the base"
+      ],
+      "next_two_weeks": [
+        "Repeat at label intervals while it stays wet",
+        "Remove volunteer tomatoes and peppers"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Copper plus mancozeb alternated with acibenzolar-S-methyl, where registered. Copper-resistant strains are common, so do not rely on copper alone"
+      ],
+      "organic": [
+        "OMRI-listed copper products"
+      ],
+      "cultural": [
+        "Rotate away from tomato and pepper for 2-3 years",
+        "Disinfect stakes, tools and trays"
+      ]
+    },
+    "prevention": [
+      "Use certified disease-free seed and transplants",
+      "Avoid overhead irrigation"
+    ],
+    "look_alikes": [
+      "Tomato___Early_blight",
+      "Tomato___Septoria_leaf_spot",
+      "Tomato___Target_Spot"
+    ],
+    "questions": [
+      "greasy_spots_halo",
+      "tiny_spots_grey_centre",
+      "target_rings"
+    ],
+    "sources": [
+      {
+        "title": "Clemson Extension: Controlling bacterial spot on tomato and pepper",
+        "url": "https://lgpress.clemson.edu/publication/controlling-bacterial-spot-on-tomato-and-pepper/"
+      },
+      {
+        "title": "University of Minnesota Extension: Tomato leaf spot diseases",
+        "url": "https://extension.umn.edu/plant-diseases/tomato-leaf-spot-diseases"
+      }
+    ]
+  },
+  {
+    "id": "Tomato___Early_blight",
+    "plant": "Tomato",
+    "disease": "Early blight",
+    "display_name": "Tomato early blight",
+    "healthy": false,
+    "pathogen": "Alternaria solani",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A very common fungal disease. Target-like spots start on the oldest leaves and move up; plants can lose many leaves but often still fruit.",
+    "symptoms": [
+      "Dark brown spots with concentric rings (bull's-eye) and a yellow margin",
+      "Starts on the lowest, oldest leaves",
+      "Dark leathery spots near the stem end of fruit"
+    ],
+    "key_sign": "Brown spots with concentric rings like a target, on the lowest leaves first.",
+    "favourable_conditions": "Warm, humid weather with alternating wet and dry periods.",
+    "spread": "Survives in infected debris, soil and on seed; spreads by rain splash and wind.",
+    "action_plan": {
+      "today": [
+        "Pinch off spotted lower leaves (removing up to a third of the leaves is fine early on)",
+        "Mulch the soil to stop spores splashing up"
+      ],
+      "this_week": [
+        "If spots keep spreading, apply a fungicide registered for early blight",
+        "Stake or cage plants and prune the lowest leaves for airflow"
+      ],
+      "next_two_weeks": [
+        "Repeat protection at label intervals in humid weather",
+        "Keep plants well fed and evenly watered"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Mancozeb, chlorothalonil, azoxystrobin, or azoxystrobin + difenoconazole, as registered; rotate groups"
+      ],
+      "organic": [
+        "Copper fungicides; Bacillus subtilis-based biofungicides; seed treatment with Trichoderma"
+      ],
+      "cultural": [
+        "Remove and destroy crop debris after harvest",
+        "Rotate with non-solanaceous crops"
+      ]
+    },
+    "prevention": [
+      "Plant tolerant varieties",
+      "Use disease-free transplants"
+    ],
+    "look_alikes": [
+      "Tomato___Septoria_leaf_spot",
+      "Tomato___Target_Spot",
+      "Tomato___Bacterial_spot"
+    ],
+    "questions": [
+      "target_rings",
+      "tiny_spots_grey_centre",
+      "water_soaked_spreading"
+    ],
+    "sources": [
+      {
+        "title": "University of Minnesota Extension: Early blight",
+        "url": "https://extension.umn.edu/diseases/early-blight-tomato"
+      },
+      {
+        "title": "TNAU Agritech: Tomato early blight",
+        "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+      },
+      {
+        "title": "Penn State Extension: Tomato diseases and disorders",
+        "url": "https://extension.psu.edu/tomato-diseases-and-disorders-in-the-home-garden"
+      }
+    ]
+  },
+  {
+    "id": "Tomato___Late_blight",
+    "plant": "Tomato",
+    "disease": "Late blight",
+    "display_name": "Tomato late blight",
+    "healthy": false,
+    "pathogen": "Phytophthora infestans",
+    "pathogen_type": "oomycete",
+    "risk": "high",
+    "summary": "A fast, destructive disease that can kill tomato plants within days in cool, wet weather. The same pathogen attacks potato.",
+    "symptoms": [
+      "Large, irregular, water-soaked patches that turn olive then brown",
+      "White, downy growth under the leaf in humid conditions",
+      "Brown lesions on stems and petioles",
+      "Firm, greasy brown blotches on fruit"
+    ],
+    "key_sign": "Fast-spreading, water-soaked patches with white fuzz underneath in humid weather.",
+    "favourable_conditions": "Cool nights (about 10-20 °C), mild days, and long wet periods from rain, fog or dew.",
+    "spread": "Wind-blown spores travel long distances; also spread by infected transplants and potato tubers.",
+    "action_plan": {
+      "today": [
+        "Remove and bag infected plants; do not compost them",
+        "Tell nearby tomato and potato growers"
+      ],
+      "this_week": [
+        "Protect remaining plants immediately with a fungicide registered for late blight, then at short label intervals",
+        "Avoid overhead watering and keep foliage dry"
+      ],
+      "next_two_weeks": [
+        "Keep spraying while cool, wet weather continues",
+        "Destroy all infected material at the end of the season"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Mancozeb, chlorothalonil, cyazofamid, azoxystrobin or other late-blight products as registered; rotate groups"
+      ],
+      "organic": [
+        "Copper fungicides applied before infection"
+      ],
+      "cultural": [
+        "Remove volunteer potatoes and tomatoes",
+        "Space plants for fast drying"
+      ]
+    },
+    "prevention": [
+      "Plant late-blight-resistant varieties",
+      "Never plant near cull potato piles"
+    ],
+    "look_alikes": [
+      "Tomato___Early_blight",
+      "Tomato___Leaf_Mold",
+      "Tomato___Target_Spot"
+    ],
+    "questions": [
+      "water_soaked_spreading",
+      "white_growth_underside",
+      "target_rings"
+    ],
+    "sources": [
+      {
+        "title": "TNAU Agritech: Tomato late blight",
+        "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_8.html"
+      },
+      {
+        "title": "UMass Extension: Tomato leaf blights",
+        "url": "https://www.umass.edu/agriculture-food-environment/vegetable/fact-sheets/tomato-leaf-blights"
+      }
+    ]
+  },
+  {
+    "id": "Tomato___Leaf_Mold",
+    "plant": "Tomato",
+    "disease": "Leaf mold",
+    "display_name": "Tomato leaf mould",
+    "healthy": false,
+    "pathogen": "Passalora fulva (syn. Fulvia fulva)",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A fungus that thrives in humid greenhouses and dense plantings. Pale spots on top of leaves match velvety olive mould underneath.",
+    "symptoms": [
+      "Pale green to yellow spots on the upper leaf surface",
+      "Olive-green to greyish-brown velvety mould directly beneath",
+      "Leaves curl, wither and drop"
+    ],
+    "key_sign": "Yellow spots on top with olive velvety mould on the underside.",
+    "favourable_conditions": "Relative humidity above about 85% with poor airflow; very common in polyhouses and greenhouses.",
+    "spread": "Spores spread by air, tools and clothing; survives on debris and greenhouse structures.",
+    "action_plan": {
+      "today": [
+        "Remove infected leaves and carry them out in a bag"
+      ],
+      "this_week": [
+        "Reduce humidity: ventilate, space plants, prune lower leaves, and water in the morning",
+        "Apply a fungicide registered for leaf mould if it keeps spreading"
+      ],
+      "next_two_weeks": [
+        "Keep humidity down; check the undersides of new leaves"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Chlorothalonil, mancozeb or other fungicides labelled for tomato leaf mould"
+      ],
+      "organic": [
+        "Copper fungicides; Bacillus-based biofungicides"
+      ],
+      "cultural": [
+        "Ventilate and heat greenhouses to stop condensation",
+        "Clean and disinfect the structure between crops"
+      ]
+    },
+    "prevention": [
+      "Grow leaf-mould-resistant varieties",
+      "Avoid wetting leaves"
+    ],
+    "look_alikes": [
+      "Tomato___Late_blight",
+      "Tomato___Septoria_leaf_spot"
+    ],
+    "questions": [
+      "olive_velvet_underside",
+      "white_growth_underside"
+    ],
+    "sources": [
+      {
+        "title": "UConn IPM: Vegetable pest message (spider mites, leaf mold)",
+        "url": "https://ipm.cahnr.uconn.edu/?p=16012"
+      },
+      {
+        "title": "UMass Extension: Tomato leaf blights",
+        "url": "https://www.umass.edu/agriculture-food-environment/vegetable/fact-sheets/tomato-leaf-blights"
+      }
+    ]
+  },
+  {
+    "id": "Tomato___Septoria_leaf_spot",
+    "plant": "Tomato",
+    "disease": "Septoria leaf spot",
+    "display_name": "Tomato Septoria leaf spot",
+    "healthy": false,
+    "pathogen": "Septoria lycopersici",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "One of the most destructive tomato leaf diseases. Many small spots appear on lower leaves after fruit set and can strip plants of foliage.",
+    "symptoms": [
+      "Many small (2-3 mm) round spots with grey-white centres and dark borders",
+      "Tiny black dots inside spot centres (seen with a magnifier)",
+      "Starts on lower leaves after fruit set; leaves yellow and fall"
+    ],
+    "key_sign": "Many small round spots with pale grey centres and dark borders.",
+    "favourable_conditions": "Warm, wet weather and leaf wetness; splashing from soil.",
+    "spread": "Survives on crop debris and related weeds; spores splash from soil and lower leaves.",
+    "action_plan": {
+      "today": [
+        "Remove spotted lower leaves",
+        "Mulch to stop soil splash"
+      ],
+      "this_week": [
+        "Apply a fungicide registered for Septoria leaf spot if spots move up the plant",
+        "Water at the base early in the day"
+      ],
+      "next_two_weeks": [
+        "Repeat at label intervals during wet weather",
+        "Control nightshade weeds nearby"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Chlorothalonil, mancozeb or other fungicides labelled for Septoria"
+      ],
+      "organic": [
+        "Copper fungicides"
+      ],
+      "cultural": [
+        "Rotate away from tomato for at least 1-2 years",
+        "Remove plant debris at season end"
+      ]
+    },
+    "prevention": [
+      "Stake plants and keep lower leaves off the soil",
+      "Most varieties are susceptible, so prevention matters"
+    ],
+    "look_alikes": [
+      "Tomato___Early_blight",
+      "Tomato___Target_Spot",
+      "Tomato___Bacterial_spot"
+    ],
+    "questions": [
+      "tiny_spots_grey_centre",
+      "target_rings",
+      "greasy_spots_halo"
+    ],
+    "sources": [
+      {
+        "title": "University of Minnesota Extension: Tomato leaf spot diseases",
+        "url": "https://extension.umn.edu/plant-diseases/tomato-leaf-spot-diseases"
+      },
+      {
+        "title": "Penn State Extension: Tomato diseases and disorders",
+        "url": "https://extension.psu.edu/tomato-diseases-and-disorders-in-the-home-garden"
+      }
+    ]
+  },
+  {
+    "id": "Tomato___Spider_mites Two-spotted_spider_mite",
+    "plant": "Tomato",
+    "disease": "Two-spotted spider mite",
+    "display_name": "Two-spotted spider mite damage",
+    "healthy": false,
+    "pathogen": "Tetranychus urticae",
+    "pathogen_type": "mite",
+    "risk": "moderate",
+    "summary": "Not a disease but a tiny pest. Mites suck sap from the underside of leaves, causing fine speckling, bronzing and webbing in hot, dry weather.",
+    "symptoms": [
+      "Fine yellow or white speckles (stippling) on the upper leaf",
+      "Fine silk webbing under leaves and between stems",
+      "Leaves turn bronze, dry and drop"
+    ],
+    "key_sign": "Fine pale speckling with tiny moving dots and webbing underneath.",
+    "favourable_conditions": "Hot, dry, dusty conditions; populations explode quickly in warm weather and greenhouses.",
+    "spread": "Mites crawl between touching plants and are carried by wind, clothing and tools.",
+    "action_plan": {
+      "today": [
+        "Confirm: tap a leaf over white paper and look for moving specks",
+        "Hose the undersides of leaves with a strong spray of water"
+      ],
+      "this_week": [
+        "If numbers are high, apply a miticide or horticultural oil registered for tomato, covering leaf undersides",
+        "Remove heavily infested leaves"
+      ],
+      "next_two_weeks": [
+        "Re-check after a week; repeat treatments as per label, rotating products",
+        "Reduce dust and water stress"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Miticides registered for tomato (for example abamectin, where permitted); rotate modes of action"
+      ],
+      "organic": [
+        "Insecticidal soap, neem or horticultural oils; release predatory mites (Phytoseiulus persimilis)"
+      ],
+      "cultural": [
+        "Avoid broad-spectrum insecticides that kill natural predators",
+        "Keep plants well watered"
+      ]
+    },
+    "prevention": [
+      "Control weeds around the field",
+      "Scout leaf undersides weekly in hot, dry weather"
+    ],
+    "look_alikes": [
+      "Tomato___Target_Spot",
+      "Tomato___Tomato_mosaic_virus"
+    ],
+    "questions": [
+      "webbing_mites",
+      "target_rings"
+    ],
+    "sources": [
+      {
+        "title": "UMass Extension: Two-spotted spider mite",
+        "url": "https://www.umass.edu/agriculture-food-environment/vegetable/fact-sheets/two-spotted-spider-mite"
+      },
+      {
+        "title": "UConn IPM: Vegetable pest message (spider mites, leaf mold)",
+        "url": "https://ipm.cahnr.uconn.edu/?p=16012"
+      }
+    ]
+  },
+  {
+    "id": "Tomato___Target_Spot",
+    "plant": "Tomato",
+    "disease": "Target spot",
+    "display_name": "Tomato target spot",
+    "healthy": false,
+    "pathogen": "Corynespora cassiicola",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A fungal disease of warm, humid regions that causes ringed leaf spots, heavy leaf drop inside the canopy and pitted fruit.",
+    "symptoms": [
+      "Brown spots with light-brown centres and faint concentric rings",
+      "Spots start on older leaves inside the canopy",
+      "Pitted, sunken spots on fruit"
+    ],
+    "key_sign": "Ringed brown spots similar to early blight, often without the yellow halo.",
+    "favourable_conditions": "Moderate to warm temperatures (about 21-27 °C) with high humidity and dense canopies.",
+    "spread": "Spores spread by wind and rain; the fungus has a wide host range and survives on debris.",
+    "action_plan": {
+      "today": [
+        "Remove spotted leaves from the inner canopy"
+      ],
+      "this_week": [
+        "Open the canopy by pruning and staking",
+        "Apply a fungicide registered for target spot if it spreads"
+      ],
+      "next_two_weeks": [
+        "Repeat protection at label intervals in humid weather",
+        "Remove crop debris after harvest"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Chlorothalonil, mancozeb, azoxystrobin or other products labelled for target spot; rotate groups"
+      ],
+      "organic": [
+        "Copper fungicides give partial control"
+      ],
+      "cultural": [
+        "Prune for airflow; avoid excess nitrogen",
+        "Rotate crops and remove debris"
+      ]
+    },
+    "prevention": [
+      "Avoid overly dense plantings",
+      "Scout inside the canopy, not just outer leaves"
+    ],
+    "look_alikes": [
+      "Tomato___Early_blight",
+      "Tomato___Septoria_leaf_spot",
+      "Tomato___Spider_mites Two-spotted_spider_mite"
+    ],
+    "questions": [
+      "target_rings",
+      "webbing_mites",
+      "tiny_spots_grey_centre"
+    ],
+    "sources": [
+      {
+        "title": "UF/IFAS: Target spot of tomato",
+        "url": "https://ask.ifas.ufl.edu/publication/PP351"
+      },
+      {
+        "title": "University of Kentucky: Foliar diseases of tomato (PPFS-VG-25)",
+        "url": "https://plantpathology.mgcafe.uky.edu/sites/plantpathology.ca.uky.edu/files/PPFS-VG-25.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    "plant": "Tomato",
+    "disease": "Yellow leaf curl virus",
+    "display_name": "Tomato yellow leaf curl virus (TYLCV)",
+    "healthy": false,
+    "pathogen": "Tomato yellow leaf curl virus (spread by whitefly Bemisia tabaci)",
+    "pathogen_type": "virus",
+    "risk": "critical",
+    "summary": "A whitefly-spread virus with no cure. Infected young plants become stunted and produce little or no fruit.",
+    "symptoms": [
+      "Young leaves small, cupped upward, with yellow edges",
+      "Plants stunted and bushy",
+      "Flowers drop; very little fruit set"
+    ],
+    "key_sign": "Small, upward-curled young leaves with yellow margins on a stunted plant.",
+    "favourable_conditions": "Hot weather with high whitefly populations.",
+    "spread": "Spread only by whiteflies and infected transplants; not spread by touch or seed.",
+    "action_plan": {
+      "today": [
+        "Remove infected plants (bag them first so whiteflies do not fly off)",
+        "Check leaf undersides for whiteflies"
+      ],
+      "this_week": [
+        "Install yellow sticky traps and control whiteflies with registered products",
+        "Protect nurseries and young plants with insect-proof netting"
+      ],
+      "next_two_weeks": [
+        "Keep removing new symptomatic plants",
+        "Control weed hosts around the field"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "No cure for the virus. Control the whitefly vector with insecticides registered for tomato (for example thiamethoxam or imidacloprid where permitted), rotating modes of action"
+      ],
+      "organic": [
+        "Neem oil or insecticidal soap against whiteflies; reflective (silver) mulches"
+      ],
+      "cultural": [
+        "Raise seedlings under insect-proof nets",
+        "Grow barrier crops such as maize or sorghum around the field"
+      ]
+    },
+    "prevention": [
+      "Plant TYLCV-resistant or tolerant varieties",
+      "Leave a tomato-free period between crops to break the cycle"
+    ],
+    "look_alikes": [
+      "Tomato___Tomato_mosaic_virus",
+      "Tomato___Bacterial_spot"
+    ],
+    "questions": [
+      "curled_yellow_young_leaves",
+      "mosaic_pattern"
+    ],
+    "sources": [
+      {
+        "title": "UF/IFAS: Managing whitefly and TYLCV in tomato",
+        "url": "https://ask.ifas.ufl.edu/publication/IN1430"
+      },
+      {
+        "title": "NC State Extension: Tomato yellow leaf curl virus",
+        "url": "https://content.ces.ncsu.edu/tomato-yellow-leaf-curl-virus"
+      },
+      {
+        "title": "TNAU Agritech: Tomato leaf curl virus",
+        "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_6.html"
+      }
+    ]
+  },
+  {
+    "id": "Tomato___Tomato_mosaic_virus",
+    "plant": "Tomato",
+    "disease": "Mosaic virus",
+    "display_name": "Tomato mosaic virus (ToMV)",
+    "healthy": false,
+    "pathogen": "Tomato mosaic virus (Tobamovirus)",
+    "pathogen_type": "virus",
+    "risk": "critical",
+    "summary": "A very stable virus spread by touch, tools and seed. There is no cure; infected plants yield less, lower-quality fruit.",
+    "symptoms": [
+      "Light- and dark-green mottled (mosaic) leaves",
+      "Distorted, fern-like or narrow leaves",
+      "Uneven ripening or internal browning of fruit"
+    ],
+    "key_sign": "Light-and-dark green mosaic mottling with distorted leaves.",
+    "favourable_conditions": "Any conditions; spread is driven by handling plants.",
+    "spread": "Spreads on hands, tools, clothing and infected seed; survives for long periods in debris and on surfaces.",
+    "action_plan": {
+      "today": [
+        "Remove and destroy infected plants",
+        "Wash hands with soap before touching healthy plants"
+      ],
+      "this_week": [
+        "Disinfect tools, stakes and trays (for example with a 10% bleach solution or a skim-milk dip during work)",
+        "Do not smoke or handle tobacco near plants"
+      ],
+      "next_two_weeks": [
+        "Watch neighbouring plants for new mottling",
+        "Do not save seed from infected plants"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "No chemical cure"
+      ],
+      "organic": [
+        "No organic cure; strict hygiene is the only control"
+      ],
+      "cultural": [
+        "Remove infected plants early",
+        "Clean tools and hands between plants"
+      ]
+    },
+    "prevention": [
+      "Plant resistant varieties (Tm-2 or Tm-2² genes)",
+      "Buy certified virus-free seed"
+    ],
+    "look_alikes": [
+      "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "Tomato___Spider_mites Two-spotted_spider_mite"
+    ],
+    "questions": [
+      "mosaic_pattern",
+      "curled_yellow_young_leaves"
+    ],
+    "sources": [
+      {
+        "title": "TNAU Agritech: Tomato diseases",
+        "url": "https://agritech.tnau.ac.in/crop_protection/crop_prot_crop%20diseases_veg_tomato.html"
+      },
+      {
+        "title": "Penn State Extension: Tomato diseases and disorders",
+        "url": "https://extension.psu.edu/tomato-diseases-and-disorders-in-the-home-garden"
+      }
+    ]
+  },
+  {
+    "id": "Tomato___healthy",
+    "plant": "Tomato",
+    "disease": "Healthy",
+    "display_name": "Healthy tomato leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this tomato leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Stake and mulch plants"
+      ]
+    },
+    "prevention": [
+      "Stake and mulch plants",
+      "Water at the base in the morning",
+      "Rotate crops and remove debris"
+    ],
+    "look_alikes": [
+      "Tomato___Septoria_leaf_spot",
+      "Tomato___Early_blight"
+    ],
+    "questions": [
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "University of Minnesota Extension: Tomato leaf spot diseases",
+        "url": "https://extension.umn.edu/plant-diseases/tomato-leaf-spot-diseases"
+      }
+    ]
+  }
+]

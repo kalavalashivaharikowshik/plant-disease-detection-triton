@@ -1,0 +1,193 @@
+[
+  {
+    "id": "Apple___Apple_scab",
+    "plant": "Apple",
+    "disease": "Apple scab",
+    "display_name": "Apple scab",
+    "healthy": false,
+    "pathogen": "Venturia inaequalis",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "The most common apple disease. A fungus causes velvety olive spots on leaves and dark scabs on fruit; severe attacks drop leaves early and weaken the tree.",
+    "symptoms": [
+      "Olive-green to brown velvety leaf spots with feathery edges that later turn black",
+      "Twisted or puckered young leaves; early leaf drop in bad years",
+      "Brown, raised, corky scabs on fruit, which may crack"
+    ],
+    "key_sign": "Velvety olive-to-black spots with blurred, feathery edges.",
+    "favourable_conditions": "Cool, wet spring weather; infection needs several hours of leaf wetness.",
+    "spread": "Spores overwinter in fallen infected leaves and are splashed or blown onto new leaves in spring.",
+    "action_plan": {
+      "today": [
+        "Pick off badly spotted leaves you can reach and remove them from the orchard",
+        "Note which trees are affected so you can monitor them"
+      ],
+      "this_week": [
+        "If fruit quality matters, apply a protectant fungicide registered for apple scab, especially before forecast rain",
+        "Prune crowded branches to let air and sunlight dry the canopy"
+      ],
+      "next_two_weeks": [
+        "Repeat protection at the label interval while wet weather continues",
+        "Check new leaves and young fruit for fresh spots"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Protectant fungicides containing captan or mancozeb, applied before infection periods",
+        "Systemic options such as myclobutanil or other DMI fungicides; rotate groups to avoid resistance"
+      ],
+      "organic": [
+        "Sulfur or lime-sulfur sprays, applied before rain",
+        "Copper sprays at green tip only (can scar fruit later)"
+      ],
+      "cultural": [
+        "Rake and destroy or compost fallen leaves in autumn to remove the overwintering source",
+        "Prune for an open canopy; avoid overhead irrigation"
+      ]
+    },
+    "prevention": [
+      "Plant scab-resistant or immune varieties (for example Liberty, Freedom, Pixie Crunch)",
+      "Remove nearby susceptible ornamental crabapples, which can carry the disease"
+    ],
+    "look_alikes": ["Apple___Black_rot", "Apple___Cedar_apple_rust"],
+    "questions": ["olive_feathery_spots", "purple_border_frogeye", "any_symptoms"],
+    "sources": [
+      {"title": "University of Minnesota Extension: Apple scab", "url": "https://extension.umn.edu/plant-diseases/apple-scab"},
+      {"title": "Iowa State University: Pests and Diseases of Apples", "url": "https://yardandgarden.extension.iastate.edu/how-to/pests-and-diseases-apples"}
+    ]
+  },
+  {
+    "id": "Apple___Black_rot",
+    "plant": "Apple",
+    "disease": "Black rot",
+    "display_name": "Apple black rot (frog-eye leaf spot)",
+    "healthy": false,
+    "pathogen": "Botryosphaeria obtusa",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A fungus that causes 'frog-eye' leaf spots, branch cankers and a firm black rot of fruit. Most common on stressed or injured trees.",
+    "symptoms": [
+      "Round leaf spots with a purple border and tan centre (frog-eye spots)",
+      "Sunken, reddish-brown cankers on branches",
+      "Fruit rot with brown and black rings; fruit dries into black mummies"
+    ],
+    "key_sign": "Round spots with a purple border and a tan centre.",
+    "favourable_conditions": "Warm, wet weather; trees weakened by winter injury, fire blight or poor care.",
+    "spread": "Survives in dead wood, cankers and mummified fruit; spores spread by rain splash.",
+    "action_plan": {
+      "today": [
+        "Remove mummified fruit from the tree and the ground",
+        "Mark branches with cankers for pruning"
+      ],
+      "this_week": [
+        "Prune out dead wood and cankers at least 15 cm below visible damage in dry weather; disinfect tools between cuts",
+        "If many leaves are spotted, apply a fungicide registered for black rot on apple"
+      ],
+      "next_two_weeks": [
+        "Destroy all prunings (do not leave them in the orchard)",
+        "Reduce tree stress: water in dry spells and fertilise according to a soil test"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Captan and other fungicides labelled for apple black rot, usually combined with the scab programme"
+      ],
+      "organic": [
+        "Strict sanitation is the main tool; sulfur offers limited protection"
+      ],
+      "cultural": [
+        "Remove cankers, dead branches and mummies, which are the main sources of spores",
+        "Control fire blight and avoid wounds, which open the door to infection"
+      ]
+    },
+    "prevention": [
+      "Keep trees vigorous and free of dead wood",
+      "Clean up fallen fruit every season"
+    ],
+    "look_alikes": ["Apple___Apple_scab", "Apple___Cedar_apple_rust"],
+    "questions": ["purple_border_frogeye", "olive_feathery_spots", "target_rings"],
+    "sources": [
+      {"title": "University of Minnesota Extension: Apple leaf spot diagnosis", "url": "https://apps.extension.umn.edu/garden/diagnose/plant/fruit/apple/leavesspots.html"},
+      {"title": "Iowa State University: Pests and Diseases of Apples", "url": "https://yardandgarden.extension.iastate.edu/how-to/pests-and-diseases-apples"}
+    ]
+  },
+  {
+    "id": "Apple___Cedar_apple_rust",
+    "plant": "Apple",
+    "disease": "Cedar apple rust",
+    "display_name": "Cedar apple rust",
+    "healthy": false,
+    "pathogen": "Gymnosporangium juniperi-virginianae",
+    "pathogen_type": "fungus",
+    "risk": "low",
+    "summary": "A rust fungus that needs both apple and juniper (red cedar) to complete its life cycle. Causes bright orange leaf spots; rarely serious on resistant varieties.",
+    "symptoms": [
+      "Yellow spots that turn bright orange with a red border on the upper leaf",
+      "Small tube-like structures on the underside of older spots",
+      "Orange, slightly raised spots on fruit"
+    ],
+    "key_sign": "Bright orange spots, often with a red border.",
+    "favourable_conditions": "Wet spring weather when junipers nearby release spores from orange, jelly-like galls.",
+    "spread": "Spores blow from galls on juniper or red cedar trees to apple leaves; it does not spread apple to apple.",
+    "action_plan": {
+      "today": [
+        "Look for brown galls or orange jelly-like growths on nearby juniper or cedar trees"
+      ],
+      "this_week": [
+        "Remove galls from nearby junipers where practical",
+        "On susceptible varieties with heavy infection, apply a fungicide registered for rust"
+      ],
+      "next_two_weeks": [
+        "Monitor new leaves; most infection happens from pink bud to a few weeks after petal fall"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Myclobutanil or other DMI fungicides labelled for rust, applied from pink bud through early fruit set"
+      ],
+      "organic": [
+        "Sulfur sprays give partial protection when applied before infection"
+      ],
+      "cultural": [
+        "Remove nearby junipers or their galls to break the cycle"
+      ]
+    },
+    "prevention": [
+      "Plant rust-resistant apple varieties",
+      "Avoid planting apples close to eastern red cedar"
+    ],
+    "look_alikes": ["Apple___Apple_scab", "Apple___Black_rot"],
+    "questions": ["orange_pustules", "olive_feathery_spots", "purple_border_frogeye"],
+    "sources": [
+      {"title": "University of Minnesota Extension: Cedar-apple rust", "url": "https://extension.umn.edu/plant-diseases/cedar-apple-rust"},
+      {"title": "UMass Extension: Apple IPM, Cedar apple rust", "url": "https://www.umass.edu/agriculture-food-environment/fruit/fact-sheets/apple-ipm-cedar-apple-rust"}
+    ]
+  },
+  {
+    "id": "Apple___healthy",
+    "plant": "Apple",
+    "disease": "Healthy",
+    "display_name": "Healthy apple leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this apple leaf.",
+    "symptoms": ["Even green colour", "No spots, powder or distortion"],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": ["No treatment needed"],
+      "this_week": ["Check a few leaves on each tree, including the undersides"],
+      "next_two_weeks": ["Keep monitoring, especially after rainy periods in spring"]
+    },
+    "treatment": {"chemical": [], "organic": [], "cultural": ["Keep the canopy open and clean up fallen leaves"]},
+    "prevention": ["Prune annually for airflow", "Remove fallen leaves and fruit in autumn"],
+    "look_alikes": ["Apple___Apple_scab"],
+    "questions": ["any_symptoms", "olive_feathery_spots"],
+    "sources": [
+      {"title": "Iowa State University: Pests and Diseases of Apples", "url": "https://yardandgarden.extension.iastate.edu/how-to/pests-and-diseases-apples"}
+    ]
+  }
+]

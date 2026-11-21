@@ -216,23 +216,42 @@ function ramp(t: number): [number, number, number] {
   return [252, 255, 164];
 }
 
-/** Paint a heat map onto a canvas over (or instead of) a photo. */
+/**
+ * Paint a heat map over whatever is already drawn on the canvas. The 7x7 map is first
+ * upsampled as greyscale and only then colourised, matching the server's rendering
+ * (upsampling colours directly would smear dark halos into cool areas).
+ */
 export function drawHeat(ctx: CanvasRenderingContext2D, heat: Float32Array, width: number, height: number, alpha = 0.6) {
-  const small = document.createElement("canvas");
-  small.width = GRID;
-  small.height = GRID;
-  const sctx = small.getContext("2d");
-  if (!sctx) return;
-  const img = sctx.createImageData(GRID, GRID);
+  const scale = Math.min(1, 320 / Math.max(width, height));
+  const w = Math.max(1, Math.round(width * scale));
+  const h = Math.max(1, Math.round(height * scale));
+  const grid = document.createElement("canvas");
+  grid.width = GRID;
+  grid.height = GRID;
+  const gctx = grid.getContext("2d");
+  const big = document.createElement("canvas");
+  big.width = w;
+  big.height = h;
+  const bctx = big.getContext("2d", { willReadFrequently: true });
+  if (!gctx || !bctx) return;
+  const cells = gctx.createImageData(GRID, GRID);
   for (let j = 0; j < heat.length; j++) {
-    const [r, g, b] = ramp(heat[j]);
-    img.data[j * 4] = r;
-    img.data[j * 4 + 1] = g;
-    img.data[j * 4 + 2] = b;
-    img.data[j * 4 + 3] = Math.round(255 * Math.min(1, heat[j] * 1.3) * alpha);
+    const v = Math.round(heat[j] * 255);
+    cells.data.set([v, v, v, 255], j * 4);
   }
-  sctx.putImageData(img, 0, 0);
-  ctx.imageSmoothingEnabled = true;
-  ctx.imageSmoothingQuality = "high";
-  ctx.drawImage(small, 0, 0, width, height);
+  gctx.putImageData(cells, 0, 0);
+  bctx.imageSmoothingEnabled = true;
+  bctx.imageSmoothingQuality = "high";
+  bctx.drawImage(grid, 0, 0, w, h);
+  const pixels = bctx.getImageData(0, 0, w, h);
+  for (let i = 0; i < pixels.data.length; i += 4) {
+    const t = pixels.data[i] / 255;
+    const [r, g, b] = ramp(t);
+    pixels.data[i] = r;
+    pixels.data[i + 1] = g;
+    pixels.data[i + 2] = b;
+    pixels.data[i + 3] = Math.round(255 * alpha * Math.min(1, t * 1.3));
+  }
+  bctx.putImageData(pixels, 0, 0);
+  ctx.drawImage(big, 0, 0, width, height);
 }

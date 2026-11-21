@@ -56,6 +56,10 @@ export function ResultView({ result: original, file, onReset }: Props) {
       </div>
 
       <div className="grid gap-8 lg:grid-cols-12">
+        {/* On phones the answer comes first, before the photo. */}
+        <div className="lg:hidden">
+          <ResultHeader result={result} />
+        </div>
         <div className="space-y-6 lg:col-span-7">
           <HeatmapCompare visuals={result.visuals} healthy={prediction.healthy} />
           {result.visuals.zoom && !prediction.healthy && (
@@ -74,7 +78,9 @@ export function ResultView({ result: original, file, onReset }: Props) {
           )}
         </div>
         <div className="space-y-8 lg:col-span-5">
-          <ResultHeader result={result} />
+          <div className="hidden lg:block">
+            <ResultHeader result={result} />
+          </div>
           <NoticeList notices={result.warnings} />
           <ReliabilityPanel result={result} />
           <TopPredictions scores={result.top_k} selected={prediction.class_id} />

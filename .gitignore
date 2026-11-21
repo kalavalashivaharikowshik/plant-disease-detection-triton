@@ -4,32 +4,43 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Virtual environments
-venv/
 .venv/
+venv/
 env/
-ENV/
-
-# =========================
-# Build / Distribution
-# =========================
-build/
-dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
 *.egg-info/
-.eggs/
 
 # =========================
-# Logs
+# Node / Frontend
 # =========================
-*.log
-logs/
+node_modules/
+frontend/dist/
+frontend/dev-dist/
+frontend/coverage/
+frontend/test-results/
+frontend/playwright-report/
+.vite/
 
 # =========================
-# Environment variables
+# Environment & secrets
 # =========================
 .env
 .env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# =========================
+# Logs & runtime files
+# =========================
+*.log
+logs/
 
 # =========================
 # IDE / OS
@@ -38,64 +49,25 @@ logs/
 .idea/
 .DS_Store
 Thumbs.db
+*.swp
+*.tmp
+*.bak
 
 # =========================
-# Node / Frontend
+# Machine learning artifacts
 # =========================
-node_modules/
-dist/
-build/
-.vite/
-
-# =========================
-# Testing
-# =========================
-.pytest_cache/
-.coverage
-
-# =========================
-# Machine Learning (IGNORE HEAVY FILES)
-# =========================
+# Large training artifacts are never committed. The served ONNX model in
+# model_repository/ is the single source of truth and IS committed.
 *.h5
 *.hdf5
 *.ckpt
 *.pt
 *.pth
-*.pb
 *.tflite
 *.keras
-
-# ❌ DO NOT IGNORE ALL ONNX
-# *.onnx   ← removed intentionally
-
-# Ignore other model folders
-models/
 datasets/
-data/
 
 # =========================
 # Docker
 # =========================
 docker-compose.override.yml
-
-# =========================
-# Security / Secrets
-# =========================
-*.pem
-*.key
-credentials.json
-secrets.json
-
-# =========================
-# Misc
-# =========================
-*.tmp
-*.bak
-*.swp
-
-# =========================
-# IMPORTANT: KEEP TRITON MODEL
-# =========================
-!model_repository/
-!model_repository/**
-!model_repository/**/model.onnx

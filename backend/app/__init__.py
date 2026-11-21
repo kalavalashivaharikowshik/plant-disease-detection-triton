@@ -1,3 +1,3 @@
-"""Plant Disease Detection Backend API"""
+"""Plant Disease Detection API."""
 
-__version__ = "1.0.0"
+__version__ = "3.0.0"

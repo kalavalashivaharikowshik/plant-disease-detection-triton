@@ -93,8 +93,8 @@ export function HistoryPage() {
                     <p>
                       <span className="font-bold" style={{ color: e.riskColor }}>
                         {e.riskLabel}
-                      </span>{" "}
-                      · {percent(e.confidence)}
+                      </span>
+                      , {percent(e.confidence)} sure
                     </p>
                     <p className="text-moss">{formatDate(e.createdAt)}</p>
                     <div className="mt-1 flex gap-3">

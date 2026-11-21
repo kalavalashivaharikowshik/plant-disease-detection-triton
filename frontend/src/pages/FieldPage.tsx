@@ -144,7 +144,7 @@ export function FieldPage() {
                     <p className="font-bold text-ink">{row.result.prediction.display_name}</p>
                     <p>
                       {percent(row.result.prediction.confidence)}
-                      {!row.result.reliable && " · check again"}
+                      {!row.result.reliable && ", check again"}
                     </p>
                   </>
                 ) : row.status === "error" ? (

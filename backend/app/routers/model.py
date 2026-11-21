@@ -14,6 +14,9 @@ EVALUATION = {
     "dataset": "PlantVillage (color), 10 random images per class",
     "images": 380,
     "top1_accuracy": 0.942,
+    "top3_accuracy": 1.0,
+    "reliable_share": 0.895,
+    "reliable_accuracy": 0.994,
     "note": "Lab photos on plain backgrounds; expect lower accuracy on field photos.",
 }
 

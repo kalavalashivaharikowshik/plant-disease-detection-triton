@@ -62,6 +62,11 @@ export function AboutPage() {
                 {percent(Number(info.data.evaluation.top1_accuracy), 1)} on {String(info.data.evaluation.images)} images (
                 {String(info.data.evaluation.dataset)})
               </dd>
+              <dt className="font-bold text-ink">When marked reliable</dt>
+              <dd>
+                Right {percent(Number(info.data.evaluation.reliable_accuracy), 1)} of the time (
+                {percent(Number(info.data.evaluation.reliable_share))} of photos get the reliable mark)
+              </dd>
               <dt className="font-bold text-ink">Caveat</dt>
               <dd>{String(info.data.evaluation.note)}</dd>
               <dt className="font-bold text-ink">Version</dt>

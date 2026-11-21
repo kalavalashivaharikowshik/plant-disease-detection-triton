@@ -1,0 +1,192 @@
+[
+  {
+    "id": "Potato___Early_blight",
+    "plant": "Potato",
+    "disease": "Early blight",
+    "display_name": "Potato early blight",
+    "healthy": false,
+    "pathogen": "Alternaria solani",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A very common fungal leaf disease. Target-like spots start on older leaves; severe cases reduce tuber size.",
+    "symptoms": [
+      "Dark brown spots with concentric rings (target pattern) on older leaves",
+      "Yellow area around spots",
+      "Spots enlarge and leaves die from the bottom up"
+    ],
+    "key_sign": "Brown spots with concentric rings, starting on the lowest, oldest leaves.",
+    "favourable_conditions": "Warm weather with alternating wet and dry periods; stressed or ageing plants are more susceptible.",
+    "spread": "Survives in infected plant debris and soil; spores spread by wind and rain splash.",
+    "action_plan": {
+      "today": [
+        "Remove the most heavily spotted lower leaves"
+      ],
+      "this_week": [
+        "Apply a protectant fungicide registered for early blight if spots are spreading",
+        "Keep plants well fed: nitrogen-stressed plants get worse early blight"
+      ],
+      "next_two_weeks": [
+        "Repeat protection at label intervals",
+        "Keep monitoring; separate from late blight, which spreads much faster"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Protectants such as mancozeb or chlorothalonil; systemic options such as azoxystrobin or difenoconazole as registered"
+      ],
+      "organic": [
+        "Copper-based sprays; Bacillus subtilis-based biofungicides"
+      ],
+      "cultural": [
+        "Rotate with non-solanaceous crops for at least 2 years",
+        "Destroy crop debris after harvest"
+      ]
+    },
+    "prevention": [
+      "Plant certified seed tubers",
+      "Maintain good fertility and irrigation to reduce plant stress"
+    ],
+    "look_alikes": [
+      "Potato___Late_blight",
+      "Potato___healthy"
+    ],
+    "questions": [
+      "target_rings",
+      "water_soaked_spreading",
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "University of Minnesota Extension: Early blight",
+        "url": "https://extension.umn.edu/diseases/early-blight-tomato"
+      },
+      {
+        "title": "TNAU Agritech: Organic management of tomato and potato blights",
+        "url": "https://agritech.tnau.ac.in/org_farm/orgfarm_tomato_diseases.html"
+      }
+    ]
+  },
+  {
+    "id": "Potato___Late_blight",
+    "plant": "Potato",
+    "disease": "Late blight",
+    "display_name": "Potato late blight",
+    "healthy": false,
+    "pathogen": "Phytophthora infestans",
+    "pathogen_type": "oomycete",
+    "risk": "high",
+    "summary": "The disease behind the Irish potato famine. In cool, wet weather it can destroy a field within days and rot tubers in storage.",
+    "symptoms": [
+      "Dark, water-soaked patches that spread rapidly, often with a pale green or yellow border",
+      "White, downy growth on the leaf underside in humid conditions",
+      "Brown lesions on stems; reddish-brown dry rot in tubers"
+    ],
+    "key_sign": "Fast-spreading, water-soaked dark patches with white fuzz underneath in humid weather.",
+    "favourable_conditions": "Cool nights, mild days and long periods of leaf wetness (rain, fog, heavy dew).",
+    "spread": "Spores travel long distances on wind and rain; survives in infected seed tubers, cull piles and volunteer plants.",
+    "action_plan": {
+      "today": [
+        "Remove and bag infected plants; do not compost them",
+        "Warn neighbouring potato and tomato growers: late blight is a community disease"
+      ],
+      "this_week": [
+        "Apply a fungicide registered for late blight to the whole field immediately, then at short label intervals while weather stays wet",
+        "Ask your agriculture officer to confirm and advise on fungicide choice"
+      ],
+      "next_two_weeks": [
+        "Kill vines completely 2-3 weeks before harvest so tubers are not infected",
+        "Harvest in dry weather and do not store damaged tubers"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Protectants such as mancozeb or chlorothalonil, plus late-blight-specific products such as cyazofamid, mandipropamid or cymoxanil combinations, as registered; rotate groups"
+      ],
+      "organic": [
+        "Copper-based fungicides applied preventively"
+      ],
+      "cultural": [
+        "Destroy cull piles and volunteer potatoes",
+        "Hill soil over tubers to protect them from spores"
+      ]
+    },
+    "prevention": [
+      "Use certified disease-free seed",
+      "Plant resistant varieties where available"
+    ],
+    "look_alikes": [
+      "Potato___Early_blight",
+      "Potato___healthy"
+    ],
+    "questions": [
+      "water_soaked_spreading",
+      "white_growth_underside",
+      "target_rings"
+    ],
+    "sources": [
+      {
+        "title": "NDSU Extension: Late blight in potato",
+        "url": "https://www.ndsu.edu/agriculture/extension/publications/late-blight-potato"
+      },
+      {
+        "title": "University of Idaho: Diagnose and control late blight (BUL 1022)",
+        "url": "https://www.uidaho.edu/-/media/UIdaho-Responsive/Files/Extension/publications/bul/bul1022.PDF?la=en"
+      }
+    ]
+  },
+  {
+    "id": "Potato___healthy",
+    "plant": "Potato",
+    "disease": "Healthy",
+    "display_name": "Healthy potato leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this potato leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Use certified seed tubers"
+      ]
+    },
+    "prevention": [
+      "Use certified seed tubers",
+      "Rotate away from potato and tomato",
+      "Scout more often in cool, wet weather"
+    ],
+    "look_alikes": [
+      "Potato___Early_blight",
+      "Potato___Late_blight"
+    ],
+    "questions": [
+      "any_symptoms",
+      "water_soaked_spreading"
+    ],
+    "sources": [
+      {
+        "title": "NDSU Extension: Late blight in potato",
+        "url": "https://www.ndsu.edu/agriculture/extension/publications/late-blight-potato"
+      }
+    ]
+  }
+]

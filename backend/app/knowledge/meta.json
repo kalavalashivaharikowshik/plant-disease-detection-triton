@@ -1,0 +1,171 @@
+{
+  "risk_levels": {
+    "none": {
+      "label": "No disease",
+      "level": 0,
+      "color": "#16a34a",
+      "description": "No disease detected. Keep monitoring."
+    },
+    "low": {
+      "label": "Low risk",
+      "level": 1,
+      "color": "#65a30d",
+      "description": "Usually cosmetic or slow-spreading. Monitor and use simple cultural fixes."
+    },
+    "moderate": {
+      "label": "Moderate risk",
+      "level": 2,
+      "color": "#d97706",
+      "description": "Can reduce yield if ignored. Act within the week."
+    },
+    "high": {
+      "label": "High risk",
+      "level": 3,
+      "color": "#dc2626",
+      "description": "Spreads fast or causes heavy losses. Act today."
+    },
+    "critical": {
+      "label": "Critical",
+      "level": 4,
+      "color": "#7f1d1d",
+      "description": "No cure once infected. Contain it immediately and contact your agriculture officer."
+    }
+  },
+  "questions": {
+    "any_symptoms": {
+      "text": "Do you see any spots, yellow patches, powder or dead areas anywhere on the leaf?",
+      "help": "Look at both sides of the leaf in good light.",
+      "default": 0.85,
+      "likelihood_yes": {
+        "Apple___healthy": 0.08, "Blueberry___healthy": 0.08, "Cherry_(including_sour)___healthy": 0.08,
+        "Corn_(maize)___healthy": 0.08, "Grape___healthy": 0.08, "Peach___healthy": 0.08,
+        "Pepper,_bell___healthy": 0.08, "Potato___healthy": 0.08, "Raspberry___healthy": 0.08,
+        "Soybean___healthy": 0.08, "Strawberry___healthy": 0.08, "Tomato___healthy": 0.08
+      }
+    },
+    "target_rings": {
+      "text": "Do the brown spots have rings inside them, like a target or bull's-eye?",
+      "help": "Concentric rings are typical of early blight and target spot.",
+      "default": 0.1,
+      "likelihood_yes": {
+        "Tomato___Early_blight": 0.85, "Potato___Early_blight": 0.85, "Tomato___Target_Spot": 0.6,
+        "Tomato___Late_blight": 0.15, "Potato___Late_blight": 0.15, "Tomato___Septoria_leaf_spot": 0.1,
+        "Tomato___Bacterial_spot": 0.08, "Apple___Black_rot": 0.3
+      }
+    },
+    "white_growth_underside": {
+      "text": "In the morning or after rain, is there white, fuzzy growth on the underside of the leaf at the edge of the dark patches?",
+      "help": "Turn the leaf over. Late blight produces a white downy mould at lesion edges in humid weather.",
+      "default": 0.05,
+      "likelihood_yes": {
+        "Tomato___Late_blight": 0.8, "Potato___Late_blight": 0.8, "Tomato___Leaf_Mold": 0.35,
+        "Tomato___Early_blight": 0.05, "Potato___Early_blight": 0.05
+      }
+    },
+    "olive_velvet_underside": {
+      "text": "Are there olive-green to brown velvety patches under the leaf, below pale yellow spots on top?",
+      "help": "This is the classic sign of tomato leaf mould, common in humid greenhouses.",
+      "default": 0.05,
+      "likelihood_yes": {"Tomato___Leaf_Mold": 0.85, "Tomato___Late_blight": 0.15}
+    },
+    "tiny_spots_grey_centre": {
+      "text": "Are there many small round spots (2-3 mm) with grey-white centres and dark borders, starting on the lowest leaves?",
+      "help": "Use a magnifier: tiny black dots in the centre point to Septoria leaf spot.",
+      "default": 0.1,
+      "likelihood_yes": {
+        "Tomato___Septoria_leaf_spot": 0.85, "Tomato___Bacterial_spot": 0.3, "Tomato___Early_blight": 0.2,
+        "Tomato___Target_Spot": 0.3, "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": 0.25
+      }
+    },
+    "greasy_spots_halo": {
+      "text": "Are the spots small, dark and greasy or water-soaked looking, sometimes with a yellow halo, making the leaf look ragged?",
+      "help": "Bacterial spots often look wet and the dead centres can fall out, leaving holes.",
+      "default": 0.1,
+      "likelihood_yes": {
+        "Tomato___Bacterial_spot": 0.8, "Pepper,_bell___Bacterial_spot": 0.85, "Peach___Bacterial_spot": 0.85,
+        "Tomato___Septoria_leaf_spot": 0.2, "Tomato___Target_Spot": 0.25
+      }
+    },
+    "webbing_mites": {
+      "text": "Can you see fine silk webbing or tiny moving dots under the leaf, with fine pale speckling on top?",
+      "help": "Tap the leaf over white paper: moving specks are spider mites.",
+      "default": 0.05,
+      "likelihood_yes": {"Tomato___Spider_mites Two-spotted_spider_mite": 0.85, "Tomato___Target_Spot": 0.05}
+    },
+    "curled_yellow_young_leaves": {
+      "text": "Are the young leaves small, cupped upward with yellow edges, and is the plant stunted and bushy?",
+      "help": "Check the top of the plant. Whiteflies are often present.",
+      "default": 0.05,
+      "likelihood_yes": {"Tomato___Tomato_Yellow_Leaf_Curl_Virus": 0.9, "Tomato___Tomato_mosaic_virus": 0.25}
+    },
+    "mosaic_pattern": {
+      "text": "Do the leaves show a light-green and dark-green mottled (mosaic) pattern, sometimes fern-like or distorted?",
+      "help": "Mosaic viruses cause patchy colour rather than distinct spots.",
+      "default": 0.05,
+      "likelihood_yes": {"Tomato___Tomato_mosaic_virus": 0.85, "Tomato___Tomato_Yellow_Leaf_Curl_Virus": 0.3}
+    },
+    "powdery_rubs_off": {
+      "text": "Is there white, flour-like powder on the leaf that rubs off with a finger?",
+      "help": "Powdery mildew sits on the surface and wipes away.",
+      "default": 0.03,
+      "likelihood_yes": {
+        "Cherry_(including_sour)___Powdery_mildew": 0.9, "Squash___Powdery_mildew": 0.9
+      }
+    },
+    "orange_pustules": {
+      "text": "Are there raised, rusty orange-brown bumps that leave powder on your finger?",
+      "help": "Rust pustules release powdery spores when rubbed.",
+      "default": 0.05,
+      "likelihood_yes": {
+        "Corn_(maize)___Common_rust_": 0.9, "Apple___Cedar_apple_rust": 0.7,
+        "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": 0.1, "Corn_(maize)___Northern_Leaf_Blight": 0.05
+      }
+    },
+    "cigar_lesions": {
+      "text": "Are the corn lesions long and cigar-shaped (about 2-15 cm), grey-green to tan, and not boxed in by the leaf veins?",
+      "help": "Northern leaf blight lesions are long ovals; gray leaf spot lesions are narrow rectangles limited by veins.",
+      "default": 0.1,
+      "likelihood_yes": {
+        "Corn_(maize)___Northern_Leaf_Blight": 0.85, "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": 0.15,
+        "Corn_(maize)___Common_rust_": 0.05
+      }
+    },
+    "rectangular_vein_limited": {
+      "text": "Are the corn lesions narrow rectangles with straight sides that stop at the leaf veins?",
+      "help": "Hold the leaf against the light: gray leaf spot lesions run parallel between veins.",
+      "default": 0.1,
+      "likelihood_yes": {
+        "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": 0.85, "Corn_(maize)___Northern_Leaf_Blight": 0.15
+      }
+    },
+    "olive_feathery_spots": {
+      "text": "Are there olive-green to black velvety spots with feathery, blurred edges on the apple leaf?",
+      "help": "Apple scab spots look velvety and have no sharp border.",
+      "default": 0.1,
+      "likelihood_yes": {
+        "Apple___Apple_scab": 0.85, "Apple___Black_rot": 0.15, "Apple___Cedar_apple_rust": 0.1, "Apple___healthy": 0.04
+      }
+    },
+    "purple_border_frogeye": {
+      "text": "Are there round spots with a purple border and a tan centre (\"frog-eye\" spots)?",
+      "help": "Typical of apple black rot (frog-eye leaf spot).",
+      "default": 0.05,
+      "likelihood_yes": {"Apple___Black_rot": 0.85, "Apple___Apple_scab": 0.1, "Apple___Cedar_apple_rust": 0.15}
+    },
+    "water_soaked_spreading": {
+      "text": "Are there dark, water-soaked patches that grow quickly (within days), often with a pale green border?",
+      "help": "Late blight lesions spread fast in cool, wet weather and cross leaf veins.",
+      "default": 0.1,
+      "likelihood_yes": {
+        "Potato___Late_blight": 0.85, "Tomato___Late_blight": 0.85, "Potato___Early_blight": 0.2,
+        "Tomato___Early_blight": 0.2, "Potato___healthy": 0.03
+      }
+    },
+    "tiger_stripes": {
+      "text": "Do grape leaves show yellow or red stripes between the veins with dry brown centres (\"tiger stripes\")?",
+      "help": "Typical foliar sign of Esca (black measles).",
+      "default": 0.05,
+      "likelihood_yes": {"Grape___Esca_(Black_Measles)": 0.85, "Grape___Black_rot": 0.1, "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": 0.15}
+    }
+  }
+}

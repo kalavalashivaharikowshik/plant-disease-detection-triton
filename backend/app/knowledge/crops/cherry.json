@@ -1,0 +1,116 @@
+[
+  {
+    "id": "Cherry_(including_sour)___Powdery_mildew",
+    "plant": "Cherry",
+    "disease": "Powdery mildew",
+    "display_name": "Cherry powdery mildew",
+    "healthy": false,
+    "pathogen": "Podosphaera clandestina",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A surface fungus that coats leaves and young shoots in white powder, slowing growth and, on fruit, causing blemishes.",
+    "symptoms": [
+      "White, powdery patches on leaves and shoots",
+      "Leaves curl, pucker or turn yellow and drop",
+      "Faint white or russeted patches on fruit"
+    ],
+    "key_sign": "White, flour-like powder that wipes off with a finger.",
+    "favourable_conditions": "Warm days, cool nights and high humidity; unlike most fungi it does not need rain to infect.",
+    "spread": "Spores spread by wind from infected shoots and leaves; overwinters on buds and fallen leaves.",
+    "action_plan": {
+      "today": [
+        "Prune out heavily coated shoot tips and remove them from the orchard"
+      ],
+      "this_week": [
+        "Apply a fungicide registered for cherry powdery mildew if many leaves are affected",
+        "Thin the canopy to improve airflow and sunlight"
+      ],
+      "next_two_weeks": [
+        "Repeat protection at the label interval during warm, humid weather",
+        "Watch fruit as it colours for white patches"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Sulfur-based fungicides, or DMI / QoI fungicides labelled for cherry; rotate groups to avoid resistance"
+      ],
+      "organic": [
+        "Wettable sulfur (do not use within the label interval of oil sprays)",
+        "Potassium bicarbonate or horticultural oils"
+      ],
+      "cultural": [
+        "Prune for an open, sunny canopy",
+        "Avoid excess nitrogen, which produces soft, susceptible growth"
+      ]
+    },
+    "prevention": [
+      "Plant less susceptible varieties where available",
+      "Clean up fallen leaves in autumn"
+    ],
+    "look_alikes": [],
+    "questions": [
+      "powdery_rubs_off",
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "UC IPM: Powdery mildew on fruits and berries",
+        "url": "https://ipm.ucanr.edu/home-and-landscape/powdery-mildew-on-fruits-and-berries/"
+      }
+    ]
+  },
+  {
+    "id": "Cherry_(including_sour)___healthy",
+    "plant": "Cherry",
+    "disease": "Healthy",
+    "display_name": "Healthy cherry leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this cherry leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Prune for an open, sunny canopy"
+      ]
+    },
+    "prevention": [
+      "Prune for an open, sunny canopy",
+      "Avoid excess nitrogen",
+      "Clean up fallen leaves in autumn"
+    ],
+    "look_alikes": [
+      "Cherry_(including_sour)___Powdery_mildew"
+    ],
+    "questions": [
+      "any_symptoms",
+      "powdery_rubs_off"
+    ],
+    "sources": [
+      {
+        "title": "UC IPM: Powdery mildew on fruits and berries",
+        "url": "https://ipm.ucanr.edu/home-and-landscape/powdery-mildew-on-fruits-and-berries/"
+      }
+    ]
+  }
+]

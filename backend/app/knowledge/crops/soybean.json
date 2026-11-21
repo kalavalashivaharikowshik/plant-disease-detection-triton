@@ -1,0 +1,53 @@
+[
+  {
+    "id": "Soybean___healthy",
+    "plant": "Soybean",
+    "disease": "Healthy",
+    "display_name": "Healthy soybean leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this soybean leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Rotate with non-legume crops"
+      ]
+    },
+    "prevention": [
+      "Rotate with non-legume crops",
+      "Use certified, treated seed",
+      "Scout fields weekly from flowering onward"
+    ],
+    "look_alikes": [],
+    "questions": [
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "University of Delaware: Two-spotted spider mite (soybean pest)",
+        "url": "https://udel.edu/academics/colleges/canr/cooperative-extension/fact-sheets/two-spotted-spider-mites"
+      }
+    ]
+  }
+]

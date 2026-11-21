@@ -1,0 +1,53 @@
+[
+  {
+    "id": "Blueberry___healthy",
+    "plant": "Blueberry",
+    "disease": "Healthy",
+    "display_name": "Healthy blueberry leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this blueberry leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Keep soil acidic (pH 4.5-5.5) and well mulched"
+      ]
+    },
+    "prevention": [
+      "Keep soil acidic (pH 4.5-5.5) and well mulched",
+      "Prune old canes for airflow",
+      "Remove mummified berries"
+    ],
+    "look_alikes": [],
+    "questions": [
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "UC IPM: Powdery mildew on fruits and berries",
+        "url": "https://ipm.ucanr.edu/home-and-landscape/powdery-mildew-on-fruits-and-berries/"
+      }
+    ]
+  }
+]

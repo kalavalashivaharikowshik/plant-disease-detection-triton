@@ -1,0 +1,61 @@
+[
+  {
+    "id": "Squash___Powdery_mildew",
+    "plant": "Squash",
+    "disease": "Powdery mildew",
+    "display_name": "Squash powdery mildew",
+    "healthy": false,
+    "pathogen": "Podosphaera xanthii (and Golovinomyces spp.)",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A very common surface fungus on squash, pumpkin and other cucurbits. Leaves die early, so fruit are smaller, sunburnt and store poorly.",
+    "symptoms": [
+      "White, powdery spots on both leaf surfaces, starting on older leaves",
+      "Spots merge until the whole leaf is white",
+      "Leaves yellow, brown and die early"
+    ],
+    "key_sign": "White, flour-like powder on leaves that wipes off with a finger.",
+    "favourable_conditions": "Warm days, dense plantings and shade; it does not need rain or leaf wetness to infect.",
+    "spread": "Spores spread long distances by wind.",
+    "action_plan": {
+      "today": [
+        "Remove the worst-affected older leaves to slow spread"
+      ],
+      "this_week": [
+        "Start a fungicide programme registered for cucurbit powdery mildew as soon as the first spots appear",
+        "Space or thin plants for airflow and sunlight"
+      ],
+      "next_two_weeks": [
+        "Repeat at label intervals; alternate fungicide groups to prevent resistance",
+        "Keep checking the undersides of older leaves"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Sulfur, or targeted fungicides labelled for cucurbit powdery mildew; rotate FRAC groups because resistance develops quickly"
+      ],
+      "organic": [
+        "Sulfur (not in hot weather), potassium bicarbonate, horticultural oils, or Bacillus-based biofungicides"
+      ],
+      "cultural": [
+        "Plant in full sun with good spacing",
+        "Remove crop debris after harvest"
+      ]
+    },
+    "prevention": [
+      "Choose powdery-mildew-resistant varieties",
+      "Avoid excess nitrogen"
+    ],
+    "look_alikes": [],
+    "questions": [
+      "powdery_rubs_off",
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "UC IPM: Powdery mildew on fruits and berries",
+        "url": "https://ipm.ucanr.edu/home-and-landscape/powdery-mildew-on-fruits-and-berries/"
+      }
+    ]
+  }
+]

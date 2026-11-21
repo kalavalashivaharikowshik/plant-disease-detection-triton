@@ -20,7 +20,7 @@ services:
       - key: RATE_LIMIT
         value: 30/minute
       - key: CORS_ORIGINS
-        value: https://leafscan.onrender.com
+        value: https://leafscan-jpfc.onrender.com
       - key: GEMINI_MODEL
         value: gemini-3.8-flash
       - key: GEMINI_API_KEY

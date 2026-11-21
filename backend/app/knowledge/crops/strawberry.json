@@ -1,0 +1,120 @@
+[
+  {
+    "id": "Strawberry___Leaf_scorch",
+    "plant": "Strawberry",
+    "disease": "Leaf scorch",
+    "display_name": "Strawberry leaf scorch",
+    "healthy": false,
+    "pathogen": "Diplocarpon earlianum",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A common fungal leaf disease of strawberry. Many small purple spots merge until leaves look scorched, weakening plants and reducing fruit.",
+    "symptoms": [
+      "Many small (1-5 mm) irregular purple to reddish-brown spots on the upper leaf",
+      "Spots have no light centre and fuzzy borders",
+      "Leaves dry out and look scorched; margins may curl up"
+    ],
+    "key_sign": "Many small dark purple spots with no pale centre and indistinct borders.",
+    "favourable_conditions": "Warm, wet weather; long periods of leaf wetness; perennial (matted-row) plantings.",
+    "spread": "Overwinters on infected leaves; spores spread by splashing water.",
+    "action_plan": {
+      "today": [
+        "Remove and destroy badly scorched leaves"
+      ],
+      "this_week": [
+        "Switch to drip irrigation or water early in the day so leaves dry quickly",
+        "If many plants are affected, apply a fungicide registered for strawberry leaf spots"
+      ],
+      "next_two_weeks": [
+        "Thin crowded plants and runners for airflow",
+        "Keep monitoring new leaves"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Captan and other fungicides labelled for strawberry leaf spots (often already part of fruit-rot programmes)"
+      ],
+      "organic": [
+        "Copper-based products; strict sanitation"
+      ],
+      "cultural": [
+        "Renovate beds after harvest and remove old leaves",
+        "Rotate plantings and avoid overhead irrigation"
+      ]
+    },
+    "prevention": [
+      "Plant resistant cultivars and certified disease-free transplants"
+    ],
+    "look_alikes": [],
+    "questions": [
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "UC IPM: Leaf scorch of strawberries",
+        "url": "https://ipm.ucanr.edu/home-and-landscape/leaf-scorch-of-strawberries/"
+      },
+      {
+        "title": "NC State Extension: Leaf scorch of strawberry",
+        "url": "https://content.ces.ncsu.edu/leaf-scorch-of-strawberry"
+      },
+      {
+        "title": "UMass Extension: Strawberry IPM, common foliar diseases",
+        "url": "https://www.umass.edu/agriculture-food-environment/fruit/fact-sheets/strawberry-ipm-common-foliar-diseases"
+      }
+    ]
+  },
+  {
+    "id": "Strawberry___healthy",
+    "plant": "Strawberry",
+    "disease": "Healthy",
+    "display_name": "Healthy strawberry leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this strawberry leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Use drip irrigation"
+      ]
+    },
+    "prevention": [
+      "Use drip irrigation",
+      "Renovate beds after harvest",
+      "Plant certified, disease-free transplants"
+    ],
+    "look_alikes": [
+      "Strawberry___Leaf_scorch"
+    ],
+    "questions": [
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "UMass Extension: Strawberry IPM, common foliar diseases",
+        "url": "https://www.umass.edu/agriculture-food-environment/fruit/fact-sheets/strawberry-ipm-common-foliar-diseases"
+      }
+    ]
+  }
+]

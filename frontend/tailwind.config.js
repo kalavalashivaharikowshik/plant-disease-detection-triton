@@ -1,52 +1,43 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: "#f0fdf4",
-          100: "#dcfce7",
-          200: "#bbf7d0",
-          300: "#86efac",
-          400: "#4ade80",
-          500: "#22c55e",
-          600: "#16a34a",
-          700: "#15803d",
-          800: "#166534",
-          900: "#14532d",
-        },
-        danger: {
-          50: "#fef2f2",
-          100: "#fee2e2",
-          200: "#fecaca",
-          300: "#fca5a5",
-          400: "#f87171",
-          500: "#ef4444",
-          600: "#dc2626",
-          700: "#b91c1c",
-          800: "#991b1b",
-          900: "#7f1d1d",
-        },
+        // Herbarium palette: specimen paper, pressed-leaf greens, turmeric for attention.
+        paper: "#f3f5ef",
+        sheet: "#fbfcf8",
+        mist: "#dce3d8",
+        ink: "#183a2c",
+        body: "#33413a",
+        moss: "#4f7a5a",
+        turmeric: "#e2a229",
+        "turmeric-soft": "#fbefd4",
+        rust: "#b23a26",
+        "rust-soft": "#f6e1dc",
+      },
+      fontFamily: {
+        display: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
+        sans: ['"Atkinson Hyperlegible"', "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        // Modular scale (1.25) on a 17px base for outdoor readability.
+        sm: ["0.875rem", { lineHeight: "1.35rem" }],
+        base: ["1.0625rem", { lineHeight: "1.65rem" }],
+        lg: ["1.25rem", { lineHeight: "1.8rem" }],
+        xl: ["1.5625rem", { lineHeight: "2rem" }],
+        "2xl": ["1.953rem", { lineHeight: "2.3rem" }],
+        "3xl": ["2.441rem", { lineHeight: "2.7rem" }],
+        "4xl": ["3.052rem", { lineHeight: "3.2rem" }],
+      },
+      maxWidth: { prose: "68ch" },
+      keyframes: {
+        sweep: { "0%": { top: "0%" }, "100%": { top: "100%" } },
+        reveal: { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
       },
       animation: {
-        "fade-in": "fadeIn 0.5s ease-in-out",
-        "slide-up": "slideUp 0.3s ease-out",
-        "pulse-soft": "pulseSoft 2s infinite",
-      },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        slideUp: {
-          "0%": { transform: "translateY(10px)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
-        },
-        pulseSoft: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.8" },
-        },
+        sweep: "sweep 1.6s ease-in-out infinite alternate",
+        reveal: "reveal 0.6s ease-out both",
       },
     },
   },

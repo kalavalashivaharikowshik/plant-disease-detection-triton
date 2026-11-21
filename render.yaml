@@ -1,0 +1,27 @@
+# Render Blueprint: one Docker web service that serves the API and the website.
+# Deploy: Render dashboard -> New -> Blueprint -> select this repository.
+services:
+  - type: web
+    name: leafscan
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free            # 512 MB RAM is enough for ONNX Runtime; upgrade to "starter" to avoid cold starts
+    region: singapore     # closest Render region to India
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: INFERENCE_BACKEND
+        value: onnx
+      - key: STABILITY_VARIANTS
+        value: "4"         # fewer augmented copies keeps latency low on shared CPUs
+      - key: RATE_LIMIT
+        value: 30/minute
+      - key: CORS_ORIGINS
+        value: https://leafscan.onrender.com
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
+      - key: GEMINI_API_KEY
+        sync: false        # set the secret value in the Render dashboard

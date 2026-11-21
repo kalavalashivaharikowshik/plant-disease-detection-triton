@@ -1,39 +1,95 @@
+@import "@fontsource/atkinson-hyperlegible/400.css";
+@import "@fontsource/atkinson-hyperlegible/700.css";
+@import "@fontsource/bricolage-grotesque/500.css";
+@import "@fontsource/bricolage-grotesque/700.css";
+@import "@fontsource/bricolage-grotesque/800.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-gray-200;
+  html {
+    @apply bg-paper font-sans text-body antialiased;
   }
-
-  body {
-    @apply bg-white text-gray-900;
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink;
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 3px solid theme("colors.turmeric");
+    outline-offset: 2px;
+  }
+  ::selection {
+    @apply bg-turmeric-soft text-ink;
   }
 }
 
 @layer components {
-  .container {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  .page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
-
   .btn {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
   }
-
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700;
+    @apply btn bg-ink text-paper hover:bg-moss;
   }
-
-  .btn-secondary {
-    @apply btn bg-gray-100 text-gray-900 hover:bg-gray-200;
+  .btn-quiet {
+    @apply btn border border-mist bg-sheet text-ink hover:border-moss;
   }
-
-  .btn-danger {
-    @apply btn bg-danger-600 text-white hover:bg-danger-700;
+  .section-title {
+    @apply font-display text-xl font-bold text-ink;
   }
+  /* The specimen frame: corner brackets, as on a herbarium mounting sheet. */
+  .specimen {
+    @apply relative bg-sheet;
+    background-image:
+      linear-gradient(theme("colors.ink"), theme("colors.ink")),
+      linear-gradient(theme("colors.ink"), theme("colors.ink")),
+      linear-gradient(theme("colors.ink"), theme("colors.ink")),
+      linear-gradient(theme("colors.ink"), theme("colors.ink")),
+      linear-gradient(theme("colors.ink"), theme("colors.ink")),
+      linear-gradient(theme("colors.ink"), theme("colors.ink")),
+      linear-gradient(theme("colors.ink"), theme("colors.ink")),
+      linear-gradient(theme("colors.ink"), theme("colors.ink"));
+    background-repeat: no-repeat;
+    background-size:
+      22px 3px, 3px 22px, 22px 3px, 3px 22px,
+      22px 3px, 3px 22px, 22px 3px, 3px 22px;
+    background-position:
+      top left, top left, top right, top right,
+      bottom left, bottom left, bottom right, bottom right;
+  }
+  .ruler {
+    background-image: repeating-linear-gradient(
+      to right,
+      theme("colors.moss") 0 1px,
+      transparent 1px 10px
+    );
+  }
+}
 
-  .card {
-    @apply rounded-lg border bg-white text-gray-900 shadow-sm;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  html {
+    background: white;
+  }
+  .print-break {
+    break-before: page;
   }
 }

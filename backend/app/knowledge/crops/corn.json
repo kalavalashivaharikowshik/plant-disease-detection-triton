@@ -1,0 +1,255 @@
+[
+  {
+    "id": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+    "plant": "Corn",
+    "disease": "Gray leaf spot",
+    "display_name": "Corn gray leaf spot",
+    "healthy": false,
+    "pathogen": "Cercospora zeae-maydis",
+    "pathogen_type": "fungus",
+    "risk": "high",
+    "summary": "One of the most yield-damaging leaf diseases of corn. Long, narrow grey lesions kill leaf tissue during grain fill.",
+    "symptoms": [
+      "Small spots with a yellow halo early on",
+      "Mature lesions are narrow, rectangular, grey to tan and limited by the leaf veins",
+      "Lesions start on lower leaves and move upward"
+    ],
+    "key_sign": "Narrow rectangular grey lesions with straight sides that stop at the veins.",
+    "favourable_conditions": "Warm temperatures with long periods of high humidity or leaf wetness; worse in reduced tillage and corn-after-corn fields.",
+    "spread": "Survives on infected corn residue; spores are carried by wind and rain splash onto new leaves.",
+    "action_plan": {
+      "today": [
+        "Walk the field and check how high up the plant lesions have reached"
+      ],
+      "this_week": [
+        "If lesions reach the third leaf below the ear before or around tasselling on a susceptible hybrid, consider a foliar fungicide registered for gray leaf spot",
+        "Ask your local agriculture officer to confirm the diagnosis; other diseases look similar early on"
+      ],
+      "next_two_weeks": [
+        "Re-check upper leaves; protect the ear leaf and above, which matter most for yield"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Foliar fungicides containing strobilurin (QoI) and/or triazole (DMI) actives labelled for gray leaf spot, timed around tasselling to early silking"
+      ],
+      "organic": [
+        "No highly effective organic sprays; rely on resistant hybrids, rotation and residue management"
+      ],
+      "cultural": [
+        "Rotate away from corn for at least one year",
+        "Bury or manage residue where soil conservation allows"
+      ]
+    },
+    "prevention": [
+      "Plant hybrids with good gray leaf spot resistance ratings",
+      "Avoid continuous corn in high-risk fields"
+    ],
+    "look_alikes": [
+      "Corn_(maize)___Northern_Leaf_Blight",
+      "Corn_(maize)___Common_rust_"
+    ],
+    "questions": [
+      "rectangular_vein_limited",
+      "cigar_lesions",
+      "orange_pustules"
+    ],
+    "sources": [
+      {
+        "title": "University of Minnesota Extension: Gray leaf spot on corn",
+        "url": "https://extension.umn.edu/agriculture/crop-production/corn/gray-leaf-spot-on-corn"
+      },
+      {
+        "title": "NC State Extension: Gray leaf spot in corn",
+        "url": "https://content.ces.ncsu.edu/gray-leaf-spot-in-corn"
+      },
+      {
+        "title": "University of Nebraska: Corn disease profile (EC1867)",
+        "url": "https://extensionpubs.unl.edu/publication/ec1867/2011/pdf/view/ec1867-2011.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Corn_(maize)___Common_rust_",
+    "plant": "Corn",
+    "disease": "Common rust",
+    "display_name": "Corn common rust",
+    "healthy": false,
+    "pathogen": "Puccinia sorghi",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A rust fungus that forms rusty-brown pustules on both leaf surfaces. Usually minor on resistant hybrids but can hurt sweet corn and susceptible lines.",
+    "symptoms": [
+      "Small, raised, cinnamon-brown pustules scattered on both sides of the leaf",
+      "Pustules release powdery rust-coloured spores when rubbed",
+      "Heavily infected leaves yellow and die early"
+    ],
+    "key_sign": "Raised rusty-brown pustules on both leaf surfaces that leave powder on your finger.",
+    "favourable_conditions": "Cool to moderate temperatures (about 16-25 °C) with heavy dew or high humidity.",
+    "spread": "Spores are blown in by wind over long distances each season; spread continues by wind and splashing.",
+    "action_plan": {
+      "today": [
+        "Estimate how many leaves carry pustules, especially the ear leaf and above"
+      ],
+      "this_week": [
+        "On susceptible hybrids or sweet corn with rust building before tasselling, apply a fungicide registered for rust"
+      ],
+      "next_two_weeks": [
+        "Monitor new leaves; hot, dry weather usually slows the disease"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Triazole (DMI) or strobilurin (QoI) fungicides labelled for common rust"
+      ],
+      "organic": [
+        "Sulfur offers limited protection; resistant hybrids are the main organic tool"
+      ],
+      "cultural": [
+        "Plant early so the crop matures before rust builds up",
+        "Manage residue and volunteer corn"
+      ]
+    },
+    "prevention": [
+      "Choose hybrids with rust resistance",
+      "Scout weekly from knee-high stage in cool, humid seasons"
+    ],
+    "look_alikes": [
+      "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "Corn_(maize)___Northern_Leaf_Blight"
+    ],
+    "questions": [
+      "orange_pustules",
+      "rectangular_vein_limited"
+    ],
+    "sources": [
+      {
+        "title": "University of Wisconsin: Common corn diseases (A3879-02)",
+        "url": "https://corn.agronomy.wisc.edu/Management/pdfs/A3879-02.pdf"
+      },
+      {
+        "title": "University of Nebraska: Corn disease profile (EC1867)",
+        "url": "https://extensionpubs.unl.edu/publication/ec1867/2011/pdf/view/ec1867-2011.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Corn_(maize)___Northern_Leaf_Blight",
+    "plant": "Corn",
+    "disease": "Northern leaf blight",
+    "display_name": "Northern corn leaf blight",
+    "healthy": false,
+    "pathogen": "Exserohilum turcicum",
+    "pathogen_type": "fungus",
+    "risk": "high",
+    "summary": "A fungus that produces long cigar-shaped lesions. Early, heavy infection before grain fill can cause major yield loss.",
+    "symptoms": [
+      "Long (about 2-15 cm) elliptical, cigar-shaped grey-green to tan lesions",
+      "Lesions not limited by leaf veins; may merge and blight whole leaves",
+      "Dark spore masses on lesions in humid weather"
+    ],
+    "key_sign": "Long cigar-shaped lesions that cross the leaf veins.",
+    "favourable_conditions": "Moderate temperatures (about 18-27 °C) with long dew periods or frequent rain.",
+    "spread": "Survives on corn residue; spores carried by wind and rain splash.",
+    "action_plan": {
+      "today": [
+        "Check whether lesions have reached the ear leaf"
+      ],
+      "this_week": [
+        "If lesions are on the third leaf below the ear or higher around tasselling on a susceptible hybrid, consider a registered foliar fungicide",
+        "Record affected fields for next season's hybrid choice"
+      ],
+      "next_two_weeks": [
+        "Re-scout upper leaves; disease after the dough stage has less effect on yield"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Strobilurin (QoI) and/or triazole (DMI) fungicides labelled for northern corn leaf blight"
+      ],
+      "organic": [
+        "Resistant hybrids, rotation and residue management are the main organic tools"
+      ],
+      "cultural": [
+        "Rotate with non-host crops",
+        "Manage infected residue"
+      ]
+    },
+    "prevention": [
+      "Plant hybrids with Ht genes or good partial resistance",
+      "Avoid continuous corn where the disease was severe"
+    ],
+    "look_alikes": [
+      "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "Corn_(maize)___Common_rust_"
+    ],
+    "questions": [
+      "cigar_lesions",
+      "rectangular_vein_limited",
+      "orange_pustules"
+    ],
+    "sources": [
+      {
+        "title": "University of Wisconsin: Common corn diseases (A3879-02)",
+        "url": "https://corn.agronomy.wisc.edu/Management/pdfs/A3879-02.pdf"
+      },
+      {
+        "title": "University of Nebraska: Corn disease profile (EC1867)",
+        "url": "https://extensionpubs.unl.edu/publication/ec1867/2011/pdf/view/ec1867-2011.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Corn_(maize)___healthy",
+    "plant": "Corn",
+    "disease": "Healthy",
+    "display_name": "Healthy corn leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this corn leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Rotate crops to reduce residue-borne diseases"
+      ]
+    },
+    "prevention": [
+      "Rotate crops to reduce residue-borne diseases",
+      "Choose hybrids with good disease ratings",
+      "Scout weekly from knee-high stage"
+    ],
+    "look_alikes": [
+      "Corn_(maize)___Common_rust_"
+    ],
+    "questions": [
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "University of Nebraska: Corn disease profile (EC1867)",
+        "url": "https://extensionpubs.unl.edu/publication/ec1867/2011/pdf/view/ec1867-2011.pdf"
+      }
+    ]
+  }
+]

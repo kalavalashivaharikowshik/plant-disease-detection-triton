@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { UploadPanel } from "@/components/UploadPanel";
 import { ResultView } from "@/components/result/ResultView";
 import { api } from "@/lib/api";
@@ -28,6 +29,20 @@ export function ScanPage() {
   useEffect(() => () => {
     if (preview) URL.revokeObjectURL(preview);
   }, [preview]);
+
+  // A frame captured on the Live page arrives through navigation state.
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handled = useRef(false);
+  useEffect(() => {
+    const captured = (location.state as { file?: File } | null)?.file;
+    if (captured && !handled.current) {
+      handled.current = true;
+      navigate(".", { replace: true, state: null });
+      start(captured);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.state]);
 
   const start = (f: File) => {
     setFile(f);

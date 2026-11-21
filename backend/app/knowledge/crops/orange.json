@@ -1,0 +1,62 @@
+[
+  {
+    "id": "Orange___Haunglongbing_(Citrus_greening)",
+    "plant": "Orange",
+    "disease": "Huanglongbing (citrus greening)",
+    "display_name": "Citrus greening (HLB)",
+    "healthy": false,
+    "pathogen": "Candidatus Liberibacter asiaticus (bacterium spread by the Asian citrus psyllid)",
+    "pathogen_type": "bacterium",
+    "risk": "critical",
+    "summary": "The most destructive citrus disease worldwide. An incurable bacterial infection spread by a small insect (psyllid) that leads to bitter, misshapen fruit and tree decline.",
+    "symptoms": [
+      "Blotchy, asymmetric yellow mottling across leaf veins (unlike the symmetric pattern of nutrient deficiency)",
+      "Yellow shoots on part of the tree",
+      "Small, lopsided, bitter fruit that stays partly green",
+      "Twig dieback and tree decline over a few years"
+    ],
+    "key_sign": "Blotchy yellow mottle that is not the same on both halves of the leaf.",
+    "favourable_conditions": "Present wherever the Asian citrus psyllid is established; psyllids feed on new flush.",
+    "spread": "Spread by the Asian citrus psyllid and by grafting infected budwood. There is no cure.",
+    "action_plan": {
+      "today": [
+        "Look for psyllids on young flush (tiny insects sitting at a 45° angle, white waxy nymph secretions)",
+        "Inform your local agriculture or horticulture officer: HLB is a notifiable disease in many regions"
+      ],
+      "this_week": [
+        "Get the tree tested (PCR) to confirm",
+        "Begin psyllid control on all nearby citrus as advised by your officer"
+      ],
+      "next_two_weeks": [
+        "If confirmed and the tree is young or severely affected, remove it to protect neighbouring trees",
+        "Keep the remaining trees well fed and watered to slow decline"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Insecticides labelled for Asian citrus psyllid (for example systemic neonicotinoids on young trees), applied as part of an area-wide programme; rotate modes of action"
+      ],
+      "organic": [
+        "Horticultural mineral oils and biological control of psyllids help reduce populations"
+      ],
+      "cultural": [
+        "Remove infected trees promptly",
+        "Control psyllid host plants such as orange jessamine (Murraya paniculata) near the orchard"
+      ]
+    },
+    "prevention": [
+      "Plant only certified disease-free nursery trees",
+      "Coordinate psyllid control with neighbouring growers"
+    ],
+    "look_alikes": [],
+    "questions": [
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "UF/IFAS: Florida Citrus Production Guide, Huanglongbing",
+        "url": "https://edis.ifas.ufl.edu/publication/CG086"
+      }
+    ]
+  }
+]

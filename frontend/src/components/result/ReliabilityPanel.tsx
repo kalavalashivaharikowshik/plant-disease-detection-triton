@@ -39,7 +39,7 @@ export function ReliabilityPanel({ result }: { result: AnalysisResult }) {
         <Row
           ok={stability.stable}
           title={`Same answer in ${stability.agreement} of ${stability.total} checks`}
-          detail="The photo was mirrored, flipped, rotated and re-lit; a reliable result should not change."
+          detail={`Also checked with the photo ${stability.variants.filter((v) => v.name !== "original").map((v) => v.name).join(", ")}; a reliable result should not change.`}
         />
         {!onDevice && (
           <Row

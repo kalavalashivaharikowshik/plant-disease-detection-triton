@@ -18,10 +18,11 @@ API_ROOT = "https://generativelanguage.googleapis.com/v1beta"
 class GeminiProvider(ExplanationProvider):
     name = "gemini"
 
-    def __init__(self, api_key: str, model: str, timeout_s: float = 30.0) -> None:
+    def __init__(self, api_key: str, model: str, timeout_s: float = 30.0,
+                 transport: httpx.AsyncBaseTransport | None = None) -> None:
         self._api_key = api_key
         self._model = model
-        self._client = httpx.AsyncClient(timeout=httpx.Timeout(timeout_s, connect=5.0))
+        self._client = httpx.AsyncClient(timeout=httpx.Timeout(timeout_s, connect=5.0), transport=transport)
 
     @property
     def available(self) -> bool:

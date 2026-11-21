@@ -61,10 +61,11 @@ def parse_response(body: bytes, header_length: int | None) -> dict[str, np.ndarr
 class TritonEngine(InferenceEngine):
     name = "triton"
 
-    def __init__(self, base_url: str, model_name: str, timeout_s: float = 10.0) -> None:
+    def __init__(self, base_url: str, model_name: str, timeout_s: float = 10.0,
+                 transport: httpx.AsyncBaseTransport | None = None) -> None:
         self._base = base_url.rstrip("/")
         self._model = model_name
-        self._client = httpx.AsyncClient(timeout=httpx.Timeout(timeout_s, connect=3.0))
+        self._client = httpx.AsyncClient(timeout=httpx.Timeout(timeout_s, connect=3.0), transport=transport)
 
     @property
     def infer_url(self) -> str:

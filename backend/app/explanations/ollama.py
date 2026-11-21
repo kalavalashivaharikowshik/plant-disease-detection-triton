@@ -11,10 +11,11 @@ from .prompt import SYSTEM_INSTRUCTION, build_prompt
 class OllamaProvider(ExplanationProvider):
     name = "ollama"
 
-    def __init__(self, base_url: str, model: str, timeout_s: float = 60.0) -> None:
+    def __init__(self, base_url: str, model: str, timeout_s: float = 60.0,
+                 transport: httpx.AsyncBaseTransport | None = None) -> None:
         self._base = base_url.rstrip("/")
         self._model = model
-        self._client = httpx.AsyncClient(timeout=httpx.Timeout(timeout_s, connect=3.0))
+        self._client = httpx.AsyncClient(timeout=httpx.Timeout(timeout_s, connect=3.0), transport=transport)
 
     @property
     def available(self) -> bool:

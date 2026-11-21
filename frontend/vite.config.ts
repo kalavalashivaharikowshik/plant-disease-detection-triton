@@ -23,12 +23,19 @@ export default defineConfig({
         icons: [{ src: "leaf.svg", sizes: "any", type: "image/svg+xml", purpose: "any" }],
       },
       workbox: {
-        // The 16 MB model and ONNX Runtime are cached on demand (see offline/engine.ts),
+        // The 16 MB model and 15 MB ONNX Runtime wasm are cached on demand (see offline/engine.ts),
         // not precached, so first visits stay light.
         globPatterns: ["**/*.{js,css,html,svg,woff2}"],
-        globIgnores: ["**/ort/**", "**/model/**"],
+        globIgnores: ["**/model/**", "**/*.wasm"],
         navigateFallbackDenylist: [/^\/api\//, /^\/docs/],
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
+        runtimeCaching: [
+          {
+            urlPattern: /\.wasm$/,
+            handler: "CacheFirst",
+            options: { cacheName: "leafscan-wasm", expiration: { maxEntries: 4 } },
+          },
+        ],
       },
     }),
   ],

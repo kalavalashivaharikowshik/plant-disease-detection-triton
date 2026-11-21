@@ -19,7 +19,7 @@ export interface DeviceEngine {
   session: InferenceSession;
   head: Float32Array;
   knowledge: KnowledgeExport;
-  ort: typeof import("onnxruntime-web");
+  ort: typeof import("onnxruntime-web/wasm");
 }
 
 export interface DeviceOutput {
@@ -85,8 +85,7 @@ export function isDeviceEngineCached(): Promise<boolean> {
 export function loadDeviceEngine(onProgress?: (fraction: number) => void): Promise<DeviceEngine> {
   if (!enginePromise) {
     enginePromise = (async () => {
-      const ort = await import("onnxruntime-web");
-      ort.env.wasm.wasmPaths = "/ort/";
+      const ort = await import("onnxruntime-web/wasm");
       ort.env.wasm.numThreads = 1; // threads need cross-origin isolation, which static hosts rarely set
       const [modelBytes, headBytes, knowledge] = await Promise.all([
         cachedBytes(MODEL_URL, onProgress),

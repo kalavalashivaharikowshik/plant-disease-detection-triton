@@ -14,7 +14,8 @@ Weights are untouched, so predictions are bit-for-bit identical. Safe to run rep
 Usage:
     python scripts/add_features_output.py \
         --model model_repository/plant_model/1/model.onnx \
-        --head backend/app/assets/classifier_head.npz
+        --head backend/app/assets/classifier_head.npz \
+        --browser-head frontend/public/model/classifier_head.bin
 """
 
 from __future__ import annotations
@@ -41,6 +42,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--head", type=Path, required=True)
+    parser.add_argument("--browser-head", type=Path,
+                        help="Also write raw float32 weights (num_classes x channels) for the web app")
     args = parser.parse_args()
 
     model = onnx.load(args.model)
@@ -71,6 +74,10 @@ def main() -> None:
     args.head.parent.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(args.head, weight=weight, bias=bias)
     print(f"Saved classifier head {weight.shape} -> {args.head}")
+    if args.browser_head:
+        args.browser_head.parent.mkdir(parents=True, exist_ok=True)
+        args.browser_head.write_bytes(np.ascontiguousarray(weight, dtype="<f4").tobytes())
+        print(f"Saved browser head -> {args.browser_head}")
 
 
 if __name__ == "__main__":

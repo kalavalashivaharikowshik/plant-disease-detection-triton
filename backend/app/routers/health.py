@@ -1,104 +1,36 @@
-from datetime import datetime
-from fastapi import APIRouter, HTTPException
-import requests
+"""Liveness and readiness probes."""
 
-from ..models import HealthResponse
-from ..config_manager import config_manager
+from __future__ import annotations
 
-router = APIRouter()
+from fastapi import APIRouter, Depends
 
-TRITON_HEALTH_URL = "http://localhost:8000/v2/health/ready"
+from .. import __version__
+from ..inference.hybrid import HybridEngine
+from ..schemas import HealthResponse, ReadyResponse
+from ..state import AppState, get_state
 
-
-# ================= HEALTH =================
-@router.get("/health", response_model=HealthResponse)
-async def health_check():
-    """Health check using Triton server."""
-    try:
-        # 🔥 Check Triton server
-        response = requests.get(TRITON_HEALTH_URL)
-
-        if response.status_code != 200:
-            raise HTTPException(status_code=503, detail="Triton server unavailable")
-
-        return HealthResponse(
-            status="ok",
-            model="plant_model (Triton)",
-            timestamp=datetime.utcnow().isoformat(),
-            model_loaded=True,
-            total_classes=len(config_manager.disease_classes)
-        )
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Health check failed: {str(e)}")
+router = APIRouter(tags=["Health"])
 
 
-# ================= MODEL INFO =================
-@router.get("/model/info")
-async def get_model_info():
-    """Return model metadata (no local model needed)."""
-    try:
-        return {
-            "name": "plant_model",
-            "backend": "Triton Inference Server",
-            "total_classes": len(config_manager.disease_classes),
-            "input_shape": [3, 224, 224],
-            "output_classes": len(config_manager.disease_classes),
-        }
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to get model info: {str(e)}")
+@router.get("/health", response_model=HealthResponse, summary="Liveness probe")
+async def health() -> HealthResponse:
+    """Cheap check used by Render / Docker: the process is up."""
+    return HealthResponse(status="ok", version=__version__)
 
 
-# ================= CLASSES =================
-@router.get("/model/classes")
-async def get_model_classes():
-    """Get all supported disease classes."""
-    try:
-        classes_info = []
-
-        for class_id, disease_class in config_manager.disease_classes.items():
-            severity_info = config_manager.get_severity_for_class(class_id)
-
-            class_info = {
-                "id": disease_class.id,
-                "name": disease_class.name,
-                "plant": disease_class.plant,
-                "disease": disease_class.disease,
-                "severity": {
-                    "level": disease_class.severity,
-                    "numeric_level": severity_info.level if severity_info else 0,
-                    "color": severity_info.color if severity_info else "#10B981",
-                    "description": severity_info.description if severity_info else "Unknown"
-                },
-                "treatment": {
-                    "chemical": disease_class.treatment.chemical,
-                    "cultural": disease_class.treatment.cultural,
-                    "preventive": disease_class.treatment.preventive
-                }
-            }
-
-            classes_info.append(class_info)
-
-        return {
-            "classes": classes_info,
-            "total_classes": len(classes_info),
-            "severity_levels": {
-                name: {
-                    "level": level.level,
-                    "color": level.color,
-                    "description": level.description
-                }
-                for name, level in config_manager.severity_levels.items()
-            },
-            "treatment_types": {
-                name: {
-                    "name": treatment_type.name,
-                    "description": treatment_type.description
-                }
-                for name, treatment_type in config_manager.treatment_types.items()
-            }
-        }
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to get classes info: {str(e)}")
+@router.get("/ready", response_model=ReadyResponse, summary="Readiness and dependency status")
+async def ready(state: AppState = Depends(get_state)) -> ReadyResponse:
+    engine = state.engine
+    engines = await engine.status() if isinstance(engine, HybridEngine) else {engine.name: await engine.is_ready()}
+    serving = any(engines.values())
+    cache_ok = await state.cache.ping()
+    return ReadyResponse(
+        status="ready" if serving and cache_ok else "degraded",
+        version=__version__,
+        engine=engine.name,
+        engines=engines,
+        cache=f"{state.cache.backend}{'' if cache_ok else ' (unreachable)'}",
+        explanation_provider=state.explanations.active_provider,
+        photo_explanations=state.explanations.supports_photos,
+        classes=len(state.kb.labels),
+    )

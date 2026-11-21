@@ -97,3 +97,9 @@ def test_security_headers_and_unknown_route(client):
     assert response.status_code == 404
     assert response.headers["x-content-type-options"] == "nosniff"
     assert response.headers["x-frame-options"] == "DENY"
+
+
+def test_knowledge_export_for_offline_mode(client):
+    body = client.get("/api/model/knowledge").json()
+    assert len(body["labels"]) == 38
+    assert body["diseases"]["Tomato___Late_blight"]["action_plan"]["today"]

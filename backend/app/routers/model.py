@@ -33,6 +33,16 @@ async def model_info(state: AppState = Depends(get_state)) -> ModelInfoResponse:
     )
 
 
+@router.get("/knowledge", summary="Full curated knowledge base (used by offline mode)")
+async def model_knowledge(state: AppState = Depends(get_state)) -> dict:
+    kb = state.kb
+    return {
+        "labels": kb.labels,
+        "risk_levels": {k: v.__dict__ for k, v in kb.risk_levels.items()},
+        "diseases": {cid: info.__dict__ for cid, info in kb.diseases.items()},
+    }
+
+
 @router.get("/classes", response_model=ClassesResponse, summary="All supported plants and diseases")
 async def model_classes(state: AppState = Depends(get_state)) -> ClassesResponse:
     kb = state.kb

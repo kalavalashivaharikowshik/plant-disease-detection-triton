@@ -5,7 +5,7 @@ import { UploadPanel } from "@/components/UploadPanel";
 import { ResultView } from "@/components/result/ResultView";
 import { api } from "@/lib/api";
 import { analyzeOnDevice } from "@/lib/offline/analyze";
-import { usePreferences } from "@/lib/preferences";
+import { usePreferences } from "@/lib/usePreferences";
 
 const STEPS = [
   ["Photograph one leaf", "Close up, in daylight, with the leaf filling the frame."],

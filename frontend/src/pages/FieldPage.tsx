@@ -5,7 +5,7 @@ import { MAX_UPLOAD_MB } from "@/components/UploadPanel";
 import { api } from "@/lib/api";
 import { percent } from "@/lib/format";
 import { analyzeOnDevice } from "@/lib/offline/analyze";
-import { usePreferences } from "@/lib/preferences";
+import { usePreferences } from "@/lib/usePreferences";
 import type { AnalysisResult } from "@/lib/types";
 
 const MAX_FILES = 20;

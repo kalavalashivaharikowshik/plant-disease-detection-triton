@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Loader2, Square, Volume2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
-import { usePreferences } from "@/lib/preferences";
+import { usePreferences } from "@/lib/usePreferences";
 import { LANGUAGE_OPTIONS, speak, speechSupported, stopSpeaking } from "@/lib/speech";
 import type { ClassScore, Explanation } from "@/lib/types";
 

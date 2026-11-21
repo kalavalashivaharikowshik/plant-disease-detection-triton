@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { Camera, History, Info, LayoutGrid, ScanLine } from "lucide-react";
 import type { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
-import { usePreferences } from "@/lib/preferences";
+import { usePreferences } from "@/lib/usePreferences";
 
 const NAV = [
   { to: "/", label: "Scan", icon: ScanLine, end: true },

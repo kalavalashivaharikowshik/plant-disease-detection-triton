@@ -1,17 +1,5 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-
-export type EngineMode = "server" | "device";
-
-interface Preferences {
-  techMode: boolean;
-  setTechMode: (value: boolean) => void;
-  language: string;
-  setLanguage: (value: string) => void;
-  engineMode: EngineMode;
-  setEngineMode: (value: EngineMode) => void;
-}
-
-const PreferencesContext = createContext<Preferences | null>(null);
+import { useEffect, useState, type ReactNode } from "react";
+import { PreferencesContext, type EngineMode } from "./usePreferences";
 
 function useStored<T>(key: string, initial: T): [T, (value: T) => void] {
   const [value, setValue] = useState<T>(() => {
@@ -41,10 +29,4 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
       {children}
     </PreferencesContext.Provider>
   );
-}
-
-export function usePreferences(): Preferences {
-  const value = useContext(PreferencesContext);
-  if (!value) throw new Error("usePreferences must be used inside PreferencesProvider");
-  return value;
 }

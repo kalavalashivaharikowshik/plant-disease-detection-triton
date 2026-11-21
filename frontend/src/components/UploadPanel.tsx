@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { Camera, ImageUp } from "lucide-react";
 import { useCallback, useRef, useState } from "react";
 import { useDropzone, type FileRejection } from "react-dropzone";
-import { usePreferences } from "@/lib/preferences";
+import { usePreferences } from "@/lib/usePreferences";
 import { ScanOverlay } from "./ScanOverlay";
 
 export const MAX_UPLOAD_MB = 8;

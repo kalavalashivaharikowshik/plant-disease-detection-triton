@@ -1,7 +1,7 @@
 import { RotateCcw } from "lucide-react";
 import { useMemo, useState } from "react";
 import { formatDate } from "@/lib/format";
-import { usePreferences } from "@/lib/preferences";
+import { usePreferences } from "@/lib/usePreferences";
 import type { AnalysisResult, RefineResult } from "@/lib/types";
 import { ActionPlan } from "./ActionPlan";
 import { ComparePanel } from "./ComparePanel";

@@ -1,4 +1,11 @@
-from .health import router as health_router
-from .predict import router as predict_router
+from fastapi import APIRouter
 
-__all__ = ["health_router", "predict_router"]
+from . import explain, health, model, predict
+
+api_router = APIRouter(prefix="/api")
+api_router.include_router(health.router)
+api_router.include_router(model.router)
+api_router.include_router(predict.router)
+api_router.include_router(explain.router)
+
+__all__ = ["api_router"]

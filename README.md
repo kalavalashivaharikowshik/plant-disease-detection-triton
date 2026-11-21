@@ -4,6 +4,10 @@
 ![Python 3.12](https://img.shields.io/badge/python-3.12-3776ab)
 ![React 18](https://img.shields.io/badge/react-18-149eca)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
+[![Live demo](https://img.shields.io/badge/live%20demo-leafscan--jpfc.onrender.com-183a2c)](https://leafscan-jpfc.onrender.com)
+
+**Live demo: [leafscan-jpfc.onrender.com](https://leafscan-jpfc.onrender.com)**. Hosted on Render's free plan, so the
+first visit after a quiet period can take 30–60 seconds while the server wakes up.
 
 Photograph a leaf and LeafScan tells you **which of 38 diseases (or healthy) it shows across 14
 crops, how sure it is, where on the leaf it saw the problem, and what to do about it**, with
@@ -102,7 +106,11 @@ Only ports 3000 (website) and 8000 (API) are published; Redis, Triton and Ollama
 
 ## Deploy to Render
 
-The repo includes a [Render Blueprint](render.yaml) that deploys one Docker service (API and
+The live demo runs at **https://leafscan-jpfc.onrender.com** (API docs at
+[/docs](https://leafscan-jpfc.onrender.com/docs), status at
+[/api/ready](https://leafscan-jpfc.onrender.com/api/ready)).
+
+To deploy your own copy: the repo includes a [Render Blueprint](render.yaml) that deploys one Docker service (API and
 website together, ONNX Runtime on CPU, about 130 MB RAM, so the free plan works).
 
 1. Sign in at [render.com](https://render.com) with GitHub.

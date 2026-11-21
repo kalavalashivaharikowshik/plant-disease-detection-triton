@@ -24,6 +24,11 @@ class OnnxEngine(InferenceEngine):
 
         options = ort.SessionOptions()
         options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
+        # The memory arena keeps peak allocations (e.g. the 34-image deep-analysis batch)
+        # for the life of the process: 545 MB vs 231 MB measured, which matters on
+        # 512 MB instances. Latency cost is negligible for this model.
+        options.enable_cpu_mem_arena = False
+        options.enable_mem_pattern = False
         if threads:
             options.intra_op_num_threads = threads
         providers = [p for p in ("CUDAExecutionProvider", "CPUExecutionProvider")

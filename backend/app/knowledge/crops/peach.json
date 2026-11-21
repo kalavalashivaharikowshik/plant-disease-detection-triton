@@ -1,0 +1,121 @@
+[
+  {
+    "id": "Peach___Bacterial_spot",
+    "plant": "Peach",
+    "disease": "Bacterial spot",
+    "display_name": "Peach bacterial spot",
+    "healthy": false,
+    "pathogen": "Xanthomonas arboricola pv. pruni",
+    "pathogen_type": "bacterium",
+    "risk": "moderate",
+    "summary": "A bacterial disease that spots leaves and fruit. Spots fall out, leaving a 'shot-hole' look, and heavy infection causes leaf drop and blemished fruit.",
+    "symptoms": [
+      "Small, angular, water-soaked spots that turn purple-brown to black",
+      "Spot centres fall out, giving a shot-hole appearance",
+      "Yellowing and early leaf drop",
+      "Sunken pits or cracks on fruit"
+    ],
+    "key_sign": "Small angular dark spots whose centres drop out, leaving holes.",
+    "favourable_conditions": "Warm, wet, windy weather, especially in sandy, exposed sites.",
+    "spread": "Bacteria overwinter in twig cankers and spread by wind-driven rain.",
+    "action_plan": {
+      "today": [
+        "Note how many leaves and fruit are spotted"
+      ],
+      "this_week": [
+        "Apply a bactericide registered for peach bacterial spot (copper at low rates early in the season or oxytetracycline where permitted)",
+        "Avoid overhead irrigation"
+      ],
+      "next_two_weeks": [
+        "Repeat protection at label intervals during wet, windy spells",
+        "Check fruit for pitting"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Copper products (low rates; watch for copper injury on peach leaves)",
+        "Oxytetracycline where registered"
+      ],
+      "organic": [
+        "Copper products approved for organic use"
+      ],
+      "cultural": [
+        "Use windbreaks",
+        "Maintain balanced nutrition; avoid excess nitrogen"
+      ]
+    },
+    "prevention": [
+      "Plant resistant or tolerant varieties, the most reliable control",
+      "Avoid sandy, wind-exposed sites for susceptible varieties"
+    ],
+    "look_alikes": [],
+    "questions": [
+      "greasy_spots_halo",
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "University of Illinois Extension: Fruit tree diseases",
+        "url": "https://extension.illinois.edu/fruit-trees/diseases"
+      },
+      {
+        "title": "Penn State: Copper use and bacterial spot on peach",
+        "url": "https://plantpath.psu.edu/outreach/impacts/peter1"
+      }
+    ]
+  },
+  {
+    "id": "Peach___healthy",
+    "plant": "Peach",
+    "disease": "Healthy",
+    "display_name": "Healthy peach leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this peach leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Prune for airflow"
+      ]
+    },
+    "prevention": [
+      "Prune for airflow",
+      "Plant resistant varieties",
+      "Remove mummified fruit"
+    ],
+    "look_alikes": [
+      "Peach___Bacterial_spot"
+    ],
+    "questions": [
+      "any_symptoms",
+      "greasy_spots_halo"
+    ],
+    "sources": [
+      {
+        "title": "University of Illinois Extension: Fruit tree diseases",
+        "url": "https://extension.illinois.edu/fruit-trees/diseases"
+      }
+    ]
+  }
+]

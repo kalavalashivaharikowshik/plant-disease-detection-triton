@@ -1,7 +1,5 @@
 """Analysis endpoints: predict, deep analysis and follow-up refinement."""
 
-from __future__ import annotations
-
 from fastapi import APIRouter, Depends, File, HTTPException, Request, UploadFile
 
 from ..config import get_settings

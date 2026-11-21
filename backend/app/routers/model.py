@@ -1,7 +1,5 @@
 """Model metadata and the supported class catalogue."""
 
-from __future__ import annotations
-
 from fastapi import APIRouter, Depends
 
 from ..explanations.base import LANGUAGES

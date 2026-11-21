@@ -1,7 +1,5 @@
 """Liveness and readiness probes."""
 
-from __future__ import annotations
-
 from fastapi import APIRouter, Depends
 
 from .. import __version__

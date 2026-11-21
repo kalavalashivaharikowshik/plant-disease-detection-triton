@@ -1,7 +1,5 @@
 """AI explanation endpoint (called after /predict so the result shows instantly)."""
 
-from __future__ import annotations
-
 import json
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile

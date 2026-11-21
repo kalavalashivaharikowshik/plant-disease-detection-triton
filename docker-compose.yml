@@ -1,50 +1,90 @@
-version: "3.9"
+# Local / self-hosted stack.
+#
+#   CPU (default):  docker compose up --build            -> http://localhost:3000
+#   GPU + Triton:   docker compose --profile gpu up --build
+#   Offline LLM:    docker compose --profile ollama up --build   (then: docker compose exec ollama ollama pull llama3.2:3b)
+#
+# Only the website (3000) and the API (8000) are published; Redis, Triton and
+# Ollama stay on the private network.
+
+name: leafscan
+
+x-backend-env: &backend-env
+  ENVIRONMENT: production
+  LOG_LEVEL: INFO
+  REDIS_URL: redis://redis:6379/0
+  CORS_ORIGINS: http://localhost:3000
+  GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+  GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.8-flash}
+  OLLAMA_URL: ${OLLAMA_URL:-}
+  OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2:3b}
+  API_KEY: ${API_KEY:-}
 
 services:
-
   backend:
-    build: ./backend
-    ports:
-      - "8005:8005"
-    depends_on:
-      - triton
-      - redis
-      - ollama
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     environment:
-      - REDIS_URL=redis://redis:6379
-      - TRITON_URL=http://triton:8000/v2/models/plant_model/infer
-      - OLLAMA_URL=http://ollama:11434/api/generate
-
-  triton:
-    image: nvcr.io/nvidia/tritonserver:23.10-py3
-    runtime: nvidia
-    command: tritonserver --model-repository=/models
-    volumes:
-      - ./model_repository:/models   # ✅ FIXED HERE
+      <<: *backend-env
+      # auto = use Triton when the gpu profile is running, otherwise ONNX Runtime on CPU
+      INFERENCE_BACKEND: ${INFERENCE_BACKEND:-auto}
+      TRITON_URL: http://triton:8000
     ports:
       - "8000:8000"
-
-  ollama:
-    image: ollama/ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_data:/root/.ollama
-    restart: always
-
-  redis:
-    image: redis:7
-    ports:
-      - "6379:6379"
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
 
   frontend:
-    build: ./frontend
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
     ports:
       - "3000:3000"
     depends_on:
-      - backend
-    environment:
-      - VITE_API_URL=http://localhost:8005
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no", "--maxmemory", "64mb", "--maxmemory-policy", "allkeys-lru"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  triton:
+    profiles: ["gpu"]
+    image: nvcr.io/nvidia/tritonserver:24.08-py3
+    command: ["tritonserver", "--model-repository=/models", "--strict-readiness=true"]
+    volumes:
+      - ./model_repository:/models:ro
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/v2/health/ready"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+
+  ollama:
+    profiles: ["ollama"]
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
 
 volumes:
   ollama_data:

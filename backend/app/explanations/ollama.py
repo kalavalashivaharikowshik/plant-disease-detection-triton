@@ -36,7 +36,8 @@ class OllamaProvider(ExplanationProvider):
         data = response.json() if response.headers.get("content-type", "").startswith("application/json") else {}
         if response.status_code != 200 or "error" in data:
             # e.g. 404 "model 'llama3' not found, try pulling it first"
-            raise ExplanationError(f"Ollama error (HTTP {response.status_code}): {data.get('error', response.text[:200])}")
+            detail = data.get("error", response.text[:200])
+            raise ExplanationError(f"Ollama error (HTTP {response.status_code}): {detail}")
         text = (data.get("response") or "").strip()
         if not text:
             raise ExplanationError("Ollama returned an empty explanation")

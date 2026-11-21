@@ -1,0 +1,245 @@
+[
+  {
+    "id": "Grape___Black_rot",
+    "plant": "Grape",
+    "disease": "Black rot",
+    "display_name": "Grape black rot",
+    "healthy": false,
+    "pathogen": "Guignardia bidwellii",
+    "pathogen_type": "fungus",
+    "risk": "high",
+    "summary": "A serious fungal disease of grapes. Leaf spots are a warning sign; berry infections can destroy most of the crop.",
+    "symptoms": [
+      "Reddish-brown circular leaf spots with a dark border",
+      "Tiny black dots (fruiting bodies) inside the spots",
+      "Berries turn brown, then shrivel into hard black mummies"
+    ],
+    "key_sign": "Round reddish-brown spots with tiny black dots in a ring near the edge.",
+    "favourable_conditions": "Warm, wet weather; infection needs the leaves to stay wet for several hours.",
+    "spread": "Overwinters in mummified berries and cane lesions; spores spread by rain splash and wind.",
+    "action_plan": {
+      "today": [
+        "Remove mummified berries from the vines and the ground"
+      ],
+      "this_week": [
+        "Apply a fungicide registered for grape black rot, especially from early shoot growth until berries begin to colour",
+        "Open the canopy (shoot positioning, leaf removal) so leaves dry faster"
+      ],
+      "next_two_weeks": [
+        "Repeat protection at label intervals during wet weather",
+        "Inspect clusters; berries are most susceptible from bloom to about four weeks after"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Protectants such as mancozeb or captan, and systemic DMI or QoI fungicides labelled for black rot; rotate groups"
+      ],
+      "organic": [
+        "Copper and sulfur give only partial control; sanitation is critical in organic vineyards"
+      ],
+      "cultural": [
+        "Remove mummies and infected canes during dormant pruning",
+        "Bury or destroy fallen debris"
+      ]
+    },
+    "prevention": [
+      "Choose less susceptible varieties where possible",
+      "Keep a clean vineyard floor and an open canopy"
+    ],
+    "look_alikes": [
+      "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "Grape___Esca_(Black_Measles)"
+    ],
+    "questions": [
+      "tiny_spots_grey_centre",
+      "tiger_stripes"
+    ],
+    "sources": [
+      {
+        "title": "Penn State Extension: Grape disease, black rot",
+        "url": "https://extension.psu.edu/grape-disease-black-rot"
+      },
+      {
+        "title": "UMass Extension: Grape IPM, black rot",
+        "url": "https://www.umass.edu/agriculture-food-environment/fruit/fact-sheets/grape-ipm-black-rot"
+      }
+    ]
+  },
+  {
+    "id": "Grape___Esca_(Black_Measles)",
+    "plant": "Grape",
+    "disease": "Esca (black measles)",
+    "display_name": "Grape esca (black measles)",
+    "healthy": false,
+    "pathogen": "Phaeomoniella chlamydospora, Phaeoacremonium spp. and other wood-infecting fungi",
+    "pathogen_type": "fungus",
+    "risk": "critical",
+    "summary": "A trunk disease: fungi infect pruning wounds and live permanently inside the wood. Leaf 'tiger stripes' appear each year and vines decline.",
+    "symptoms": [
+      "Interveinal yellow or red stripes that dry to brown ('tiger stripes')",
+      "Small dark spots on berries (black measles)",
+      "Sudden collapse of a whole shoot or vine in hot weather (apoplexy)",
+      "Dark streaks in the wood when the trunk is cut"
+    ],
+    "key_sign": "Tiger-stripe pattern between the veins with dry brown centres.",
+    "favourable_conditions": "Infection happens through pruning wounds, especially during rainy weather in the dormant season.",
+    "spread": "Spores enter fresh pruning wounds; once inside the wood, the infection cannot be cured by sprays.",
+    "action_plan": {
+      "today": [
+        "Flag symptomatic vines so you can track them each season",
+        "Do not use cuttings from these vines for propagation"
+      ],
+      "this_week": [
+        "Contact your agriculture officer or a viticulture specialist to confirm (lab tests may be needed)",
+        "Plan remedial surgery: cut the trunk well below the dark-stained wood and retrain a new trunk"
+      ],
+      "next_two_weeks": [
+        "Remove and burn badly infected wood; never leave it in the vineyard"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "No fungicide cures existing infections. Registered pruning-wound protectants can reduce new infections"
+      ],
+      "organic": [
+        "Wound sealants or biological wound protectants (such as Trichoderma-based products) applied right after pruning"
+      ],
+      "cultural": [
+        "Prune in dry weather, late in the dormant season",
+        "Use double pruning: pre-prune long, then make final cuts close to bud break"
+      ]
+    },
+    "prevention": [
+      "Plant certified clean nursery stock",
+      "Protect large pruning wounds immediately"
+    ],
+    "look_alikes": [
+      "Grape___Black_rot",
+      "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)"
+    ],
+    "questions": [
+      "tiger_stripes",
+      "tiny_spots_grey_centre"
+    ],
+    "sources": [
+      {
+        "title": "UC IPM: Esca (black measles) of grape",
+        "url": "https://ipm.ucanr.edu/agriculture/grape/esca-black-measles/"
+      }
+    ]
+  },
+  {
+    "id": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+    "plant": "Grape",
+    "disease": "Leaf blight (Isariopsis leaf spot)",
+    "display_name": "Grape leaf blight (Isariopsis leaf spot)",
+    "healthy": false,
+    "pathogen": "Pseudocercospora vitis (syn. Isariopsis clavispora)",
+    "pathogen_type": "fungus",
+    "risk": "moderate",
+    "summary": "A fungal leaf spot that appears later in the season, mainly in warm, humid regions, and can cause early leaf drop.",
+    "symptoms": [
+      "Irregular dark brown to black spots on older leaves, often with a yellow edge",
+      "Spots merge into large dead patches",
+      "Early leaf drop in severe cases"
+    ],
+    "key_sign": "Irregular dark brown patches on older leaves without the ring of black dots seen in black rot.",
+    "favourable_conditions": "Warm, humid weather late in the season, especially in dense canopies.",
+    "spread": "Spreads from infected leaves by rain splash and wind; survives on fallen leaves.",
+    "action_plan": {
+      "today": [
+        "Remove heavily spotted leaves from the lower canopy"
+      ],
+      "this_week": [
+        "Improve airflow by thinning shoots and leaves around clusters",
+        "If spread continues, apply a fungicide registered for grape leaf spots"
+      ],
+      "next_two_weeks": [
+        "Monitor older leaves; keep the vineyard floor clean"
+      ]
+    },
+    "treatment": {
+      "chemical": [
+        "Mancozeb, copper oxychloride or other fungicides labelled for grape leaf spots"
+      ],
+      "organic": [
+        "Copper-based sprays"
+      ],
+      "cultural": [
+        "Collect and destroy fallen leaves",
+        "Avoid overhead irrigation"
+      ]
+    },
+    "prevention": [
+      "Maintain an open canopy",
+      "Balanced fertilisation to avoid dense, soft growth"
+    ],
+    "look_alikes": [
+      "Grape___Black_rot",
+      "Grape___Esca_(Black_Measles)"
+    ],
+    "questions": [
+      "tiny_spots_grey_centre",
+      "tiger_stripes"
+    ],
+    "sources": [
+      {
+        "title": "Penn State Extension: Grape disease, black rot",
+        "url": "https://extension.psu.edu/grape-disease-black-rot"
+      }
+    ]
+  },
+  {
+    "id": "Grape___healthy",
+    "plant": "Grape",
+    "disease": "Healthy",
+    "display_name": "Healthy grape leaf",
+    "healthy": true,
+    "pathogen": "None",
+    "pathogen_type": "none",
+    "risk": "none",
+    "summary": "No disease signs were found on this grape leaf.",
+    "symptoms": [
+      "Even green colour",
+      "No spots, powder or distortion"
+    ],
+    "key_sign": "Uniform green leaf with no spots.",
+    "favourable_conditions": "Not applicable.",
+    "spread": "Not applicable.",
+    "action_plan": {
+      "today": [
+        "No treatment needed"
+      ],
+      "this_week": [
+        "Inspect a few plants, including leaf undersides"
+      ],
+      "next_two_weeks": [
+        "Keep monitoring, especially after rain or humid spells"
+      ]
+    },
+    "treatment": {
+      "chemical": [],
+      "organic": [],
+      "cultural": [
+        "Keep an open canopy with good airflow"
+      ]
+    },
+    "prevention": [
+      "Keep an open canopy with good airflow",
+      "Remove mummified berries during pruning",
+      "Protect pruning wounds in wet weather"
+    ],
+    "look_alikes": [
+      "Grape___Black_rot"
+    ],
+    "questions": [
+      "any_symptoms"
+    ],
+    "sources": [
+      {
+        "title": "Penn State Extension: Grape disease, black rot",
+        "url": "https://extension.psu.edu/grape-disease-black-rot"
+      }
+    ]
+  }
+]

@@ -1,155 +1,108 @@
-"""
-Plant Disease Detection API
-Enhanced FastAPI application with Triton integration
-"""
+"""FastAPI application factory."""
 
-import asyncio
+from __future__ import annotations
+
 import logging
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Request, HTTPException, Depends
+from pathlib import Path
+
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
-from fastapi.responses import JSONResponse
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from slowapi import _rate_limit_exceeded_handler
-from slowapi.errors import RateLimitExceeded
+from fastapi.responses import FileResponse
+from slowapi.middleware import SlowAPIMiddleware
 
-from .config import settings
-from .routers import health_router, predict_router
-from .routers.predict import limiter
-from .security import (
-    security_audit_logger as security_audit,
-    response_cache
-)
-from .performance import (
-    AsyncTaskManager,
-    optimize_memory_usage,
-)
+from . import __version__
+from .config import BACKEND_DIR, Settings, get_settings
+from .errors import register_error_handlers
+from .explainability.cam import ClassifierHead
+from .explanations.service import ExplanationService
+from .inference.base import InferenceEngine
+from .inference.factory import create_engine
+from .knowledge.repository import get_knowledge_base
+from .logging_config import configure_logging
+from .routers import api_router
+from .security import SecurityHeadersMiddleware, limiter
+from .services.cache import Cache
+from .services.predictor import Predictor
+from .state import AppState
 
-# ================= LOGGING =================
-logging.basicConfig(
-    level=getattr(logging, settings.log_level),
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler("app.log") if not settings.is_development else logging.NullHandler()
-    ]
-)
 logger = logging.getLogger(__name__)
-
-# ================= INIT COMPONENTS =================
-task_manager = AsyncTaskManager(max_concurrent_tasks=getattr(settings, 'max_concurrent_predictions', 10))
-
-security = HTTPBearer(auto_error=False) if settings.api_key else None
+HEAD_PATH = BACKEND_DIR / "app" / "assets" / "classifier_head.npz"
 
 
-# ================= AUTH =================
-async def verify_api_key(credentials: HTTPAuthorizationCredentials = Depends(security)):
-    if not settings.api_key:
-        return True
-
-    if not credentials or credentials.credentials != settings.api_key:
-        await security_audit.log_event(
-            event_type="authentication_failure",
-            details={"reason": "invalid_api_key"}
-        )
-        raise HTTPException(status_code=401, detail="Invalid API key")
-
-    await security_audit.log_event(
-        event_type="authentication_success",
-        details={}
+def build_state(settings: Settings, engine: InferenceEngine | None = None) -> AppState:
+    kb = get_knowledge_base()
+    engine = engine or create_engine(settings)
+    head = ClassifierHead(HEAD_PATH)
+    cache = Cache(settings.redis_url, settings.cache_ttl_s)
+    explanations = ExplanationService(settings, cache)
+    return AppState(
+        settings=settings, engine=engine, kb=kb, head=head, cache=cache,
+        explanations=explanations, predictor=Predictor(engine, kb, head, settings),
     )
-    return True
 
 
-# ================= LIFECYCLE =================
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    logger.info("🚀 Starting API (Triton Mode)...")
+def mount_frontend(app: FastAPI, static_dir: Path) -> None:
+    """Serve the built single-page app (one-container deployments such as Render)."""
+    index = static_dir / "index.html"
+    if not index.is_file():
+        logger.info("No frontend build at %s; serving API only", static_dir)
+        return
+    root = static_dir.resolve()
 
-    try:
-        await security_audit.initialize()
-        await response_cache.initialize()
+    @app.get("/{path:path}", include_in_schema=False)
+    async def spa(path: str):
+        if path.startswith("api/"):
+            raise HTTPException(status_code=404, detail="Endpoint not found")
+        candidate = (root / path).resolve()
+        if path and candidate.is_file() and root in candidate.parents:
+            cache = ("public, max-age=31536000, immutable" if path.startswith("assets/")
+                     else "public, max-age=3600")
+            return FileResponse(candidate, headers={"Cache-Control": cache})
+        return FileResponse(index, headers={"Cache-Control": "no-cache"})
 
-        logger.info("✅ Security initialized")
-        logger.info("✅ Using Triton for inference (no local model)")
-
-        await optimize_memory_usage()
-
-    except Exception as e:
-        logger.error(f"Startup error: {e}")
-
-    yield
-
-    logger.info("🛑 Shutting down API...")
-    await task_manager.shutdown()
-    await security_audit.close()
-    await response_cache.close()
+    logger.info("Serving frontend from %s", static_dir)
 
 
-# ================= APP =================
-app = FastAPI(
-    title="Plant Disease Detection API",
-    description="AI-powered plant disease detection using Triton",
-    version="2.0.0",
-    docs_url="/docs",           # ✅ FORCE ENABLE
-    redoc_url="/redoc",         # ✅ FORCE ENABLE
-    openapi_url="/openapi.json",# ✅ FORCE ENABLE
-    lifespan=lifespan,
-    debug=settings.debug
-)
+def create_app(settings: Settings | None = None, engine: InferenceEngine | None = None) -> FastAPI:
+    settings = settings or get_settings()
+    configure_logging(settings.log_level)
 
-# ================= MIDDLEWARE =================
-app.add_middleware(GZipMiddleware, minimum_size=1000)
+    @asynccontextmanager
+    async def lifespan(app: FastAPI):
+        state = build_state(settings, engine)
+        app.state.services = state
+        logger.info("Started v%s (engine=%s, explanations=%s, cache=%s)", __version__,
+                    state.engine.name, state.explanations.active_provider, state.cache.backend)
+        yield
+        await state.explanations.close()
+        await state.cache.close()
+        await state.engine.close()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=settings.cors_origins_list,
-    allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],
-    allow_headers=["*"],
-)
-
-# ================= RATE LIMIT =================
-app.state.limiter = limiter
-app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
-
-
-# ================= EXCEPTIONS =================
-@app.exception_handler(404)
-async def not_found_handler(request: Request, exc):
-    return JSONResponse(status_code=404, content={"detail": "Endpoint not found"})
-
-
-@app.exception_handler(500)
-async def internal_error_handler(request: Request, exc):
-    logger.error(f"Internal server error: {exc}")
-    return JSONResponse(status_code=500, content={"detail": "Internal server error"})
-
-
-# ================= ROUTERS =================
-app.include_router(health_router, prefix="/api", tags=["Health"])
-app.include_router(predict_router, prefix="/api", tags=["Prediction"])
-
-
-# ================= ROOT =================
-@app.get("/")
-async def root():
-    return {
-        "message": "Plant Disease Detection API (Triton)",
-        "version": "2.0.0",
-        "status": "running"
-    }
-
-
-# ================= RUN =================
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(
-        "app.main:app",
-        host=settings.api_host,
-        port=settings.api_port,
-        workers=settings.api_workers,
-        log_level=settings.log_level.lower(),
-        reload=settings.debug
+    app = FastAPI(
+        title=settings.app_name,
+        version=__version__,
+        description="Leaf photo → disease, confidence, heatmap, reliability checks and sourced treatment advice.",
+        lifespan=lifespan,
     )
+    app.state.limiter = limiter
+    register_error_handlers(app)
+
+    app.add_middleware(SlowAPIMiddleware)
+    app.add_middleware(GZipMiddleware, minimum_size=1024)
+    app.add_middleware(SecurityHeadersMiddleware)
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.cors_origins_list,
+        allow_credentials=False,
+        allow_methods=["GET", "POST"],
+        allow_headers=["Content-Type", "X-API-Key"],
+    )
+
+    app.include_router(api_router)
+    mount_frontend(app, settings.static_dir)
+    return app
+
+
+app = create_app()
